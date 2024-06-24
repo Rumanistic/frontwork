@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>글자관련태그</title>
+  </head>
+  <body>
+    <!-- <br> : 줄바꿈 태그 -->
+    WHATWG[1]와 W3C가 발표하는 HTML의 최신 버전으로,
+    2014년 10월 28일 완전히 표준화되었다. <br>
+    XHTML에서 다시 HTML로 회귀하게 되었다.
+    <br>
+    <br>
+    <!-- 제목 태그 -->
+    <h1>h1 태그입니다.</h1>
+    <h2>h2 태그입니다.</h2>
+    <h3>h3 태그입니다.</h3>
+    <h4>h4 태그입니다.</h4>
+    <h5>h5 태그입니다.</h5>
+    <h6>h6 태그입니다.</h6>
+
+    <!-- 존재하지 않는 태그 사용 시 일반 글꼴로 취급 -->
+    <h7>h7 태그입니다.</h7>
+    <br><br>
+    <!-- hr (Horizontal Line) 태그 -->
+    <hr>
+
+    <!-- 문단을 나누는 태그 -->
+    <h3>문단을 나누는 태그 : p, pre</h3>
+    <p>
+      문단을 나누는 태그는 p태그와 pre 태그가 있다.
+      p 태그는 줄바꿈 하고자 한다면 별도로 태그(br)를 작성해야 한다.<br>
+      그리고      공백은 몇개의 공백을 넣던 간에 한 개의 공백으로 처리되기 때문에
+      별도의 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 기호(nbsp)를 넣어줘야 한다.<br>
+      그리고 &ensp; 2칸 띄우기와 &emsp; 3칸 띄우기도 있다.
+    </p>
+    <br><br>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum maxime ex, adipisci doloribus repellat beatae vel nisi iure nesciunt debitis eligendi ea ipsam reprehenderit impedit ratione sit! Culpa, maiores recusandae?</p>
+    <hr>
+    <pre>
+      pre태그는 시작 태그부터 종료 태그까지 입력된 내용 그대로 출력해줌
+      줄바꿈이라던지 혹은      여러개의 공백도 포함하여 인식함
+      그래서 시를 적어보겠습니다.
+
+
+            [봄은 고양이로다]
+
+                           -  이장희  -
+
+      꽃가루와 같이 부드러운 고양이의 털에
+      고운 봄의 향기(香氣)가 어리우도다.
+
+      금방울과 같이 호동그란 고양이의 눈에
+      미친 봄의 불길이 흐르도다.
+
+      고요히 다물은 고양이의 입술에
+      포근한 봄 졸음이 떠돌아라.
+
+      날카롭게 쭉 뻗은 고양이의 수염에
+      푸른 봄의 생기(生氣)가 뛰놀아라.
+    </pre>
+    <hr>
+
+    <h3>그 밖의 글자를 다루는 태그들</h3>
+
+    일반 글꼴(태그로 감싸지 않는 텍스트)
+    <br><br>
+    
+    <b> 글자를 굵게 표시하는 태그 </b>
+    <br><br>
+
+    <strong> 굵은 글자는 스트롱 + 스크린 리더(강조해서 읽음) </strong>
+    <br><br>
+
+    <i><b> 이탤릭체는 글자를 기울여서 표시 </b></i>
+    <br><br>
+
+    <em> 특히 강조할 때 em(emphasis) 사용하는데 <br> 이탤릭체 이텔릭체 이텔릭체 <b>이텔릭체?</b></em>
+    <br><br>
+
+    <mark> 하이라이터 </mark> 안에 있는 텍스트만 강조해서 표시해줌
+    <br><br>
+
+    <u> 글자에 밑줄 쫙! </u>
+    <br><br>
+
+    <s> 이건 나무위키에서 많이 보셨죠?! </s>
+    <br><br>
+
+    <small> 하긴 나무위키 에디터도 html 에디터인데 뭐.. </small> 아무튼 그렇죠??
+    <br><br>
+
+    기본글자에 <sup>위첨자</sup>와 <sub>아래첨자</sub> 를 표현해줬어
+    <br>
+    으후루꾸<sup>으후루꾸꾸루후으</sup>꾸루후으 <sub>꾸루후으으후루꾸</sub>으후루꾸
+    <br><br>
+
+    abbr : 줄임말 표시
+    <br>
+    <abbr title="Hyper Text Markup Language">HTML</abbr>이란 <abbr title="World Wide Web">WWW</abbr>의 핵심 마크업 언어이다.
+    <br><br>
+    
+    blockquote
+    <blockquote>“ 내 자기중심적 의견이지만, 대부분 사람들이 작성한 C 프로그램은 6 피트 정도 밑으로 들여쓰기 한 후에 흙으로 덮어야 한다. ” - Blair P. Houghton</blockquote>
+
+    <!-- 특수문자 입력 -->
+    <!-- escape text -->
+    <p> "특수문자" &<tag></tag> </p>
+    &lt;p&gt; &quot;특수문자&quot; & &lt;tag&gt;&lt;/tag&gt; &lt;/p&gt;
+    <br><br>
+
+    <hr>
+
+    <h3>태그를 중첩해서 사용 가능</h3>
+
+    <b><i>으후루꾸<sup>으후루꾸꾸루후으</sup>꾸루후으 <sub>꾸루후으으후루꾸</sub></i></b>
+    <small><s>으후루꾸<sup>으후루꾸꾸루후으</sup>꾸루후으 <sub>꾸루후으으후루꾸</sub></s></small>
+    <br><br><br>
+  </body>
+</html>
