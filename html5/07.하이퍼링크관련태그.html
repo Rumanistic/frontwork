@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>하이퍼링크관련태그</title>
+</head>
+<body>
+  <!-- 
+    하이퍼링크 기능은 웹 기능의 가장 핵심적인 기능
+    클릭 하면 해당 웹으로 이동
+    
+    - 텍스트를 클릭하여 링크로 이동하는 방법
+    - 이미지를 클릭하여 링크로 이동하는 방법
+    - 현재 페이지 내에서 특정 위치로 이동하는 방법
+   -->
+  <h1>하이퍼링크 관련 태그</h1>
+  <!-- a tag -->
+  <ul>
+    <li><a href="02.글자관련태그.html">글자관련태그</a></li>
+    <li><a href="03.목록관련태그.html">목록관련태그</a></li>
+    <li><a href="04.표관련태그.html" target="top">표관련태그</a></li>
+    <li><a href="05.이미지및멀티미디어관련태그.html">이미지및멀티미디어관련태그</a></li>
+    <li><a href="06.영역관련태그.html">영역관련태그</a></li>
+  </ul>
+
+  <h3>* target속성 : 링크된 문서를 클릭했을 때 문서가 열리는 위치 지정</h3>
+  <p>
+    _self(기본값) : 현재 열려있는 창에 열림<br>
+    _blank : 새 탭에서 열림<br>
+    _parent : 링크된 문서를 현재 프레임의 부모 프레임에서 열림(프레임이 없다면 현재 탭에 열림)<br>
+    _top: 링크된 문서를 현재 윈도우 전체에서 오픈함(프레임이 없으면 현재탭)
+  </p>
+
+  <a href="http://www.google.com">구글</a>
+  <a href="http://www.daum.net" target="_blank">다음</a>
+
+  <h3>* img 태그를 하이퍼링크로 만들기</h3>
+  <a href="https://picsum.photos/200/300" target="_blank"><img src="resources/img/dolphin_01.png" alt=""></a>
+
+  <h3>* 이미지 맵</h3>
+  <p>
+    이미지를 구역별로 나누어 링크를 걸어주는 태그 &lt;img&gt;태그에 usemap 속성 지정
+  </p>
+  <!-- 
+    <img src="" usemap="#맵이름">
+    <map name="맵이름">
+      <area shape="diagonal" coords="시작위치, 끝위치" href="" target="">
+    </map>
+
+    shape 속성
+      - react: 사각형
+      - circle: 원형
+      - poly : 다각형
+      - default: 전체영역
+   -->
+  <img src="resources/img/rabbit_01.png" width="500" height="300" usemap="#imgmap">
+
+  <map name="imgmap">
+    <area shape="react" coords="0, 0, 250, 300" href="https://www.google.com" alt="">
+    <area shape="react" coords="250, 0, 500, 300" href="https://www.daum.net" alt="">
+  </map>
+
+  <!--
+        이미지
+        https://seoulsolution.kr/ko/seoul-stats
+
+        강서구청
+        https://www.gangseo.seoul.kr/index
+    -->
+  <img src="https://seoulsolution.kr/sites/all/themes/seoulsolution/images/static/seoul_district_map_ko_0.png" usemap="#seoul-map">
+
+  <map name="seoul-map">
+      <area target="_blank" alt="강서구청" title="강서구청" href="https://www.gangseo.seoul.kr/index" coords="136,239,116,220,109,206,91,196,81,182,69,173,63,165,47,155,44,162,47,176,37,189,38,201,30,206,23,212,21,220,19,226,12,227,15,235,21,242,29,246,39,251,43,260,54,252,61,250,69,251,74,245,82,245,84,250,87,256,91,264,99,267,107,268,115,263,118,255,119,245,125,241,132,241" shape="poly">
+      <area target="_blank" alt="강남구청" title="강남구청" href="https://www.gangnam.go.kr/index" coords="180,300,190,310,200,320,210,330,220,340,230,350,240,360,250,370,260,380,270,390,280,400,290,410,300,420" shape="poly">
+      <area target="_blank" alt="강동구청" title="강동구청" href="https://www.gangdong.go.kr/web/new/main" coords="210,380,220,390,230,400,240,410,250,420,260,430,270,440,280,450,290,460,300,470,310,480,320,490,330,500" shape="poly">
+      <area target="_blank" alt="강북구청" title="강북구청" href="https://www.gangbuk.go.kr/index.do" coords="250,200,260,210,270,220,280,230,290,240,300,250,310,260,320,270,330,280,340,290,350,300,360,310,370,320,380,330" shape="poly">
+      <!-- Add more <area> tags for other districts -->
+  </map>
+
+  <h3>* 한 페이지 내에서 점프하는 링크 만들기</h3>
+  <h4 id="main">바로가기
+    <!-- ul>(li>a[href=#con$]{본문$})*4 -->
+    <ul>
+      <li><a href="#con1">본문1</a></li>
+      <li><a href="#con2">본문2</a></li>
+      <li><a href="#con3">본문3</a></li>
+      <li><a href="#con4">본문4</a></li>
+    </ul>
+  </h4>
+
+  <h4 id="con1">
+    본문1
+  </h4>
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem laborum sequi esse, autem neque magnam perferendis excepturi necessitatibus beatae corrupti molestiae aliquid nesciunt saepe, impedit accusantium, veniam ex fugit delectus.
+    Quod minus explicabo delectus et dicta id ducimus at culpa nihil fugiat error, rerum aut necessitatibus. Commodi reprehenderit repudiandae, corrupti laudantium ad id aut, nihil neque iusto saepe, sint ducimus.
+    Harum error nulla minus repudiandae aliquid cum, eos pariatur unde ea saepe enim corporis voluptatum quisquam eius, ipsam et? Fugiat minima eum omnis ducimus reiciendis quasi earum, quos iusto ut.
+    Sit cumque totam laudantium odit corrupti quis ipsam eligendi incidunt, sapiente quibusdam rem quas a suscipit fugit deserunt, eius praesentium consequatur impedit ipsa obcaecati dolorum blanditiis possimus in? Sint, quasi.
+    Dolores quasi molestias distinctio soluta ullam. Ex illo, autem, quidem fuga unde voluptatum aut, a minus quibusdam rem cupiditate pariatur tempore doloremque nesciunt? Deserunt facilis impedit adipisci sequi repellendus. Laborum.
+  </p>
+  <h4 id="con2">
+    본문2
+  </h4>
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi fugiat repellat rem quaerat ad itaque explicabo eveniet eaque et aliquam veritatis blanditiis sapiente, accusantium beatae? Esse commodi in quam neque.
+    Quaerat dignissimos beatae, quis ad quisquam impedit possimus qui porro corrupti deserunt reprehenderit dolor quibusdam similique et optio repudiandae temporibus consequuntur, commodi odit vero esse! Deserunt cum eius minima accusantium.
+    Vero odit harum dolores minus, earum minima saepe nisi modi enim accusantium facere laborum dignissimos unde doloribus illo eligendi fugit beatae sit necessitatibus voluptatem quas? Debitis accusantium hic asperiores perspiciatis!
+    Optio nisi deleniti explicabo maxime distinctio impedit perspiciatis modi nulla iure non veritatis similique iusto, beatae vitae commodi vel rem mollitia cumque! Corrupti a ipsum eligendi adipisci praesentium. Vitae, debitis.
+    Reiciendis exercitationem voluptatum dolore doloribus voluptatem excepturi maiores, dolores corrupti iste. Quo similique reprehenderit, illo nemo sunt aliquid molestiae itaque tenetur ipsum cumque, dolore hic ratione ullam voluptates nam minus!
+  </p>
+  <h4 id="con3">
+    본문3
+  </h4>
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam quo, fugit quis provident explicabo neque officia saepe eveniet facere ex similique sit perferendis at id cum ducimus, ratione blanditiis eos!
+    Atque minus ad error, repellendus, eveniet quibusdam animi ab maiores impedit amet ullam iusto libero! Eveniet, tempora. Ipsa consequuntur provident numquam accusantium impedit beatae, rerum dicta, perspiciatis molestiae mollitia doloremque?
+    Debitis at illo voluptatibus perferendis error non, nihil praesentium optio exercitationem quasi. Nemo mollitia laborum ad omnis aut animi rerum sapiente. Amet odit quis sint et consectetur voluptas dolor. Dignissimos.
+    Velit atque voluptatum sapiente accusantium minus hic temporibus veritatis, praesentium, pariatur eveniet saepe aspernatur officia natus facilis sunt nobis. Iusto hic corporis sint repudiandae facere sunt cumque, quasi asperiores ipsa.
+    Accusamus nam maiores maxime ab in exercitationem laudantium debitis fugit voluptatibus sint distinctio sunt itaque, id fuga rerum soluta omnis? Ducimus ipsa doloremque dolore recusandae placeat esse eveniet nulla eius!
+  </p>
+  <h4 id="con4">
+    본문4
+  </h4>
+  <p>
+    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut consequatur a repellendus pariatur ipsum quaerat nesciunt obcaecati expedita autem minus quo distinctio, eligendi labore qui voluptates repellat debitis nam impedit.
+    Officiis consectetur sunt nesciunt in facere nihil rerum, maiores animi reprehenderit sit perferendis voluptatum at ex rem iusto quaerat autem ipsam assumenda ea. Maiores corrupti labore eum architecto fuga nemo.
+    Accusantium repudiandae eos necessitatibus eveniet iure culpa deleniti, blanditiis repellat, error commodi officia minus expedita tenetur excepturi quam corporis nam iste officiis, corrupti veniam. Blanditiis suscipit aliquid architecto quisquam doloremque!
+    Porro, quas qui. Veritatis consequuntur iusto voluptatum, error molestias libero, mollitia maxime praesentium reprehenderit, facilis numquam a vel dolorem porro? Sed qui assumenda autem minus similique nihil inventore nulla earum?
+    Repellendus minima corrupti illo expedita, dolorum ipsam saepe perspiciatis aliquid veniam facere debitis possimus, nemo laboriosam sint. Cumque, a! Culpa quidem exercitationem, nostrum rerum dignissimos quam molestiae recusandae reiciendis aliquam.
+  </p>
+  <a href="#main">위로 올라가기</a>
+  <a href="#top">맨위로</a>
+</body>
+</html>

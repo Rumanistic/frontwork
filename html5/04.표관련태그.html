@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>표관련태그</title>
+</head>
+<body>
+  <!--
+      표: WEB 문서에서 자료를 정리 할 때 자주 사용함
+          정렬된 모습으로 한눈에 보이게 할 때
+          행과 열로 이루어져있다
+          Tag : <table>, <tr>, <th>, <td>
+                <table></table> : 기본적인 표를 생성해주는 태그
+                <tr></tr> : 표의 한 행을 나타내는 태그
+                <th></th> : 표의 제목 셀을 나타내는 태그 => 가운데 정렬
+                <td></td> : 표의 일반 셀을 나타내는 태그
+      
+      기본 사용법
+        <table>
+          <tr>
+            <th>aa</th>
+            <th>bb</th>
+          </tr>
+          <tr>
+            <td>cc</td>
+            <td>dd</td>
+          </tr>
+        </table>
+  -->
+  <h1>기본적인 표 만들기</h1>
+  <table border="1">
+    <!-- 표의 캡션은 표의 상단에, 그림의 캡션은 그림의 하단에 기입 -->
+    <caption>[표 1] 웹 브라우저의 종류</caption>
+    <tr>
+      <th width="100" height="30">브라우저명</th>
+      <th width="70">제조사</th>
+      <th width="200">홈페이지</th>
+    </tr>
+    <tr>
+      <td>Edge</td>
+      <td>MS</td>
+      <td>http://www.microsoft.com</td>
+    </tr>
+    <tr>
+      <td>Chrome</td>
+      <td>Google</td>
+      <td>http://www.google.com</td>
+    </tr>
+    <tr>
+      <td>Safari</td>
+      <td>Apple</td>
+      <td>http://apple.com</td>
+    </tr>
+  </table>
+
+  <hr>
+
+  <h1>표의 행과 열을 합치는 속성</h1>
+  <!--
+      셀은 th, td로 구분되며, 태그의 속성을 이용해서 셀을 병합할 수 있음
+      colspan="2" -> 열 병합(숫자만큼)
+      rowspan="2" -> 행 병합(숫자만큼)
+  -->
+  
+  <table border="1">
+    <caption>이 &emsp; 력 &emsp; 서</caption>
+    <tr>
+      <td colspan="2" rowspan="2" width="150" height="200">
+        <img src="resources/img/dolphin_01.png" width="100%" height="100%">
+      </td>
+      <td>이름</td>
+      <td width="60"></td>
+    </tr>
+    <tr>
+      <td width="50">연락처</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td width="70">주소</td>
+      <td colspan="3"></td>
+    </tr>
+    <tr>
+      <td height="170">자기소개</td>
+      <td colspan="3"></td>
+    </tr>
+  </table>
+
+  <!--
+    <table>
+      <thead>
+        테이블의 헤더 데이터를 기입
+      </thead>
+      <tbody>
+        테이블에 담길 데이터 기입
+      </tbody>
+      <tfoot>
+        참고문헌 혹은 각주 기입용(행 추가도 가능함)
+      </tfoot>
+    </table>
+  -->
+  <h1>테이블 내에 구조 나누기</h1>
+  <table border="1">
+    <thead>
+      <tr>
+        <th>이름</th>
+        <th>나이</th>
+        <th>주소</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><button>홍길동</button></td>
+        <td>21</td>
+        <td>서울</td>
+      </tr>
+      <tr>
+        <td>임꺽정</td>
+        <td>22</td>
+        <td>대전</td>
+      </tr>
+      <tr>
+        <td>유관순</td>
+        <td>23</td>
+        <td>대구</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td>총인원</td>
+        <td colspan="2">3명</td>
+      </tr>
+    </tfoot>
+  </table>
+</body>
+</html>

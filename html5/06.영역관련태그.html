@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    div {
+      width: 200px;
+      height: 200px;
+      border: 1px solid violet;
+    }
+    .red{
+      background-color: red;
+    }
+    .orange{
+      background-color: orange;
+    }
+    .yellow{
+      background-color: yellow;
+    }
+    span {
+      /* 인라인 요소는 대부분 길이 지정 불가 */
+      border: 1px dotted;
+      width: 200px;
+      height: 200px;
+    }
+
+
+  </style>
+  <title>영역관련태그</title>
+</head>
+<body>
+  <!-- 
+    * 블럭 요소 : 한 줄 단위로 영역 차지
+                  줄바꿈을 하지 않아도 자동으로 적용되어 있음
+                  (p, pre, div, h~... 등등)
+    * 인라인 요소 : content(내용) 영역에 해당하는 부분만 차지
+                  줄바꿈이 적용되지 않아 다음줄로 넘기려면 <br>태그를 사용해야함
+   -->
+  <h1>영역 관련 태그</h1>
+
+  <h2>div 태그</h2>
+  <p>div태그는 블럭요소로 한줄 단위로 영역 차지</p>
+  <div class="red">첫 번째 영역</div>
+  <div class="orange">두 번째 영역</div>
+  <div class="yellow">세 번째 영역</div>
+
+  <h3>span 태그</h3>
+  <p>span 태그는 인라인요소로 content영역만 차지한다</p>
+  <span class="red">첫 번째 영역</span>
+  <span class="orange">두 번째 영역</span>
+  <span class="yellow">세 번째 영역</span>
+
+  <hr>
+
+  <h2>div태그와 span태그의 차이점2 : 영역 지정 방식</h2>
+
+  <h3>div태그 : 사각형 박스로 영역을 지정</h3>
+  <div>
+    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorem repudiandae eius eligendi quas voluptate fugiat ex pariatur facere! Ex possimus aliquid dolorum iusto sed impedit deleniti exercitationem? Nobis, corporis qui.
+    Delectus deserunt aliquam ducimus ea ut. Esse dolore, error molestias sint ab eligendi ducimus earum quae ex cupiditate sed laudantium ad dolores vero amet beatae aut adipisci corporis quo pariatur?
+  </div>
+  <span>
+    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorem repudiandae eius eligendi quas voluptate fugiat ex pariatur facere! Ex possimus aliquid dolorum iusto sed impedit deleniti exercitationem? Nobis, corporis qui.
+    Delectus deserunt aliquam ducimus ea ut. Esse dolore, error molestias sint ab eligendi ducimus earum quae ex cupiditate sed laudantium ad dolores vero amet beatae aut adipisci corporis quo pariatur?
+  </span>
+
+  <h1>iframe</h1>
+  <p>웹 문서 안에 다른 웹 페이지를 추가하는 태그(인라인 요소)</p>
+
+  <iframe src="./05.이미지및멀티미디어관련태그.html" width="800" height="600" frameborder="0"></iframe>
+  <br>  <br>  <br>  <br>  <br>
+
+  <iframe src="" frameborder="0"></iframe>
+  <iframe width="901" height="507" src="https://www.youtube.com/embed/25BqC8D4fbI" title="DJMAX RESPECT V | V LIBERTY DLC PACK Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</body>
+</html>
