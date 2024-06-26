@@ -1,0 +1,132 @@
+/* h2 {
+  color: red;
+} */
+
+pre {
+  border: 2px solid yellow;
+  background-color: bisque;
+  color: black;
+}
+
+/* ====================== 1. 속성 선택자 ====================== */
+/* div 요소들 중 name 속성값이 div1과 "일치"하는 요소 */
+/* div[name=div1] {
+  background-color: yellow;
+} */
+
+/* div 요소들 중 name 속성값에 div1을 "포함"하는 요소 */
+div[name~=div1]{
+  color: cyan;
+}
+
+div[class|=class]{
+  font-size: large;
+}
+
+/* div 요소들 중 class 속성값이 class로 "시작"하는 요소 */
+div[class^=class]{
+  background-image: url(../../../html5/resources/img/squirrel_01.png);
+}
+
+/* div 요소들 중 class 속성값이 ss로 "끝나"는 요소 */
+div[class$=ss]{
+  text-align: left;
+}
+
+/* div 요소들 중 class 속성값이 i를 포함하는 요소 */
+div[class*=i]{
+  border : 1px dotted;
+}
+
+
+/* class 속성값이 div-class 인 요소중에서 
+  name 속성값에 div3이 포함되어있는 요소 스타일 */
+.div-class[name*=div3]{
+  background-color: cyan;
+}
+div[class="div-class"][name*="div3"] {
+  background-color: black;
+}
+
+
+/* ================ 2. 자손 선택자와 후손 선택자 =============== */
+/* id가 test1인 요소의 자손들 중 h4 요소만 선택 */
+#test1 > h4 {
+  font-style: italic;
+}
+
+/* ul인 요소의 자손들 중 li 요소만 선택 */
+#test1>ul>li {
+  background-color: beige;
+}
+
+#test1 * {
+  color: steelblue;
+}
+
+/* id가 test1인 요소의 자손들 중 li 요소만 선택 */
+#test1 li {
+  color: red;
+}
+
+
+/* ====================== 3. 동위 선택자 ====================== */
+/* id가 test2인 형제들 중 바로 뒤에 나오는 div 요소 하나만 */
+#test2+div {
+  background-color: aquamarine;
+}
+
+/* id가 test2인 형제들 중 뒤에 나오는 div 요소 전부 */
+#test2~div {
+  color: orange;
+}
+
+/* id가 test2인 형제들 중 뒤에 나오는 ul 요소 전부 */
+#test2~ul {
+  background-color: cornflowerblue;
+}
+
+
+/* ====================== 4. 반응 선택자 ====================== */
+.area {
+  width: 100px;
+  height: 100px;
+  background-color: greenyellow;
+}
+
+#active-test:active {
+  background-color: chocolate;
+}
+
+#hover-test:hover {
+  background-color: black;
+  
+  display: none;
+}
+
+#test3:active {
+  display: none;
+}
+
+
+/* ====================== 5. 상태 선택자 ====================== */
+input[type=checkbox]:checked {
+  width: 30px;
+  height: 30px;
+}
+
+input[type=checkbox]:checked+label{
+  font-size: 30px;
+}
+
+input[name^=user]:focus {
+  background-color: pink;
+}
+
+button:enabled {
+  background-color: rgb(22, 214, 214);
+}
+
+button:disabled {
+  background-color: rgb(214, 13, 64);
+}

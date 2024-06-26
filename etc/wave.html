@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    table {
+      width: 500px;
+      height: 500px;
+      border: 1px solid grey;
+      background-color: black;
+    }
+
+    tr {
+      border: 1px solid gray;
+    }
+
+    td{
+      border: 1px solid gray;
+    }
+
+    .yellow{
+      background-color: yellow;
+    }
+  </style>
+</head>
+<body>
+  selected sector : <span id="coordinates"></span>
+  <table>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </table>
+
+ 
+  <script>
+    // Function to handle cell click event
+    function cellClicked(event) {
+      const cell = event.target;
+      const table = cell.closest('table');
+      const coordinates = getCellCoordinates(cell);
+      document.getElementById('coordinates').textContent = `(${coordinates.row}, ${coordinates.col})`;
+
+      // Clear previous selections
+      document.querySelectorAll('td').forEach(td => td.classList.remove('selected'));
+
+      // Apply CSS for the clicked cell and its neighbors
+      const range = 3;
+      const delay = 500;
+
+      for (let step = 0; step <= range; step++) {
+        setTimeout(() => {
+          highlightCells(table, coordinates, step);
+        }, delay * step);
+      }
+
+      // Reset cells after the final step
+      setTimeout(() => {
+        resetCells();
+      }, delay * (range + 1));
+    }
+
+    // Function to get the row and column index of a cell
+    function getCellCoordinates(cell) {
+      return {
+        row: cell.parentElement.rowIndex,
+        col: cell.cellIndex
+      };
+    }
+
+    // Function to highlight cells within a given range
+    function highlightCells(table, coordinates, range) {
+      const { row, col } = coordinates;
+      for (let i = -range; i <= range; i++) {
+        for (let j = -range; j <= range; j++) {
+          const newRow = row + i;
+          const newCol = col + j;
+          if (newRow >= 0 && newRow < table.rows.length && newCol >= 0 && newCol < table.rows[newRow].cells.length) {
+            table.rows[newRow].cells[newCol].classList.add('selected');
+          }
+        }
+      }
+    }
+
+    // Function to reset all cells to the original state
+    function resetCells() {
+      document.querySelectorAll('td').forEach(td => td.classList.remove('selected'));
+    }
+
+    // Attach click event listeners to each cell
+    document.querySelectorAll('td').forEach(cell => {
+      cell.addEventListener('click', cellClicked);
+    });
+  </script>
+</body>
+</html>

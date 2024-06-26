@@ -66,5 +66,245 @@
       입력4 : <input type="text" name="text4"><br><br>
     </fieldset>
   </form>
+
+  <hr>
+
+  <h2>text와 관련된 input태그의 타입</h2>
+  <form action="">
+    <h3>type="text"</h3>
+    <p>
+      - 한 줄짜리 텍스트를 입력할 수 있는 텍스트 상자(default)
+    </p>
+    아이디 : <input type="text" name="userId" placeholder="아이디를 입력하세요" maxlength="12" required>
+
+    <h3>type="password"</h3>
+    <p>
+      - 비밀번호를 입력할 수 있는 텍스트 상자
+    </p>
+    패스워드 : <input type="password" name="userPwd" placeholder="영문, 숫자, 특수문자만 가능" maxlength="20" required>
+
+    <h3>type="search|url|email|tel"</h3>
+    <p>
+      - 겉모습은 일반 텍스트상자와 유사하지만 각각의 정보에 맞게 세분화된 기능 제공
+    </p>
+    검색 : <input type="search" name="q">
+    <br>
+    주소 : <input type="url" name="url">
+    <br>
+    이메일 : <input type="email" name="email">
+    <br>
+    전화번호 : <input type="tel" name="phone">
+    <br>
+    <input type="submit">
+  </form>
+
+  <hr>
+
+  <form action="">
+    <h3>type="number"</h3>
+    <p>
+      - 숫자값만 작성 가능
+      - 스핀박스가 표시됨(스핀박스 : 위/아래 화살표 버튼)
+    </p>
+
+    수량 : <input type="number" name="amount" min="0" max="100" step="5">
+    <br>
+
+    <h3>type="range"</h3>
+    <p>
+      - 슬라이드 바를 통해 숫자 지정 가능
+    </p>
+    점수 : <input type="range" name="score" min="0" max="100">
+    <br><br>
+
+    <input type="submit">
+  </form>
+
+  <hr>
+
+  <h2>날씨 및 시간</h2>
+  <form action="">
+    <h3>type="date|month|week|time|datetime-local"</h3>
+    <p>연도 월 일 입력을 받을 수 있는 텍스트 상자</p>
+    date : <input type="date" name="dateData" >
+
+    <p>연도 월 입력을 받을 수 있는 텍스트 상자</p>
+    month : <input type="month" name="monthData" >
+
+    <p>해당 연도의 몇번째 주인지 입력을 받을 수 있는 텍스트 상자</p>
+    week : <input type="week" name="weekData" >
+
+    <p>오전|오후 시 분 입력을 받을 수 있는 텍스트 상자</p>
+    time : <input type="time" name="timeData" >
+
+    <p>현재 시간 입력을 받을 수 있는 텍스트 상자</p>
+    datetime-local : <input type="datetime-local" name="dtlData" >
+    <br><br>
+
+    <input type="submit" value="서버로 전송"> 
+    &emsp;&emsp; 
+    <input type="reset" value="초기화">
+  </form>
+
+  <hr>
+  <h2>radio-button과 check-box</h2>
+  <form action="">
+    <h3>type="radio"(radio-button)</h3>
+    <p>
+      - 여러개의 값들 중 오로지 1개만 선택해야 할 때
+      - name이 같은 요소로 이뤄져야 하나만 선택 가능함
+      - 서버로 value의 값이 전송됨
+    </p>
+    <fieldset>
+      <legend>성별</legend>
+      성별 : <input type="radio" name="gender" value="Male" id="rm">
+      <label for="rm">남</label>
+      &emsp;&emsp;
+      <input type="radio" name="gender" value="Female" id="rf">
+      <label for="rf">여</label>
+    </fieldset>
+    <br><br>
+
+    <fieldset>
+      <legend>고향</legend>
+      고향 : 
+      <input type="radio" name="location" value="Seoul" id="seoul">
+      <label for="seoul">서울</label>
+      &emsp;&emsp;
+      <input type="radio" name="location" value="Gyeonggi" id="gyeonggi">
+      <label for="gyeonggi">경기도</label>
+      &emsp;&emsp;
+      <input type="radio" name="location" value="etc" id="etc">
+      <label for="etc">기타</label>
+    </fieldset>
+    <br><br>
+
+    <input type="submit" value="서버로 전송"> 
+    &emsp;&emsp; 
+    <input type="reset" value="초기화">
+  </form>
+
+  <hr>
+
+  <form action="test.do">
+    <h3>type="check"(체크박스)</h3>
+    <p>
+      - 여러개의 값들 중 여러개를 선택하려고 할 때
+      - 서버로 value에 들어있는 값이 전송됨
+    </p>
+    취미 : 
+    <input type="checkbox" name="hobby" value="reading" id="reading">
+    <label for="reading">독서</label>&emsp;
+    <input type="checkbox" name="hobby" value="exercising" id="exercising">
+    <label for="exercising">운동</label>&emsp;
+    <input type="checkbox" name="hobby" value="movie" id="movie">
+    <label for="movie">영화감상</label>&emsp;
+    <br><br>
+
+    
+    <input type="submit" value="서버로 전송"> 
+    &emsp;&emsp; 
+    <input type="reset" value="초기화">
+  </form>
+  <br>
+  <hr>
+  <h2>추가적인 input태그의 타입</h2>
+  <form action="test.do">
+    <h3>type="color"(색상선택)</h3>
+    <p>
+      - 색상을 선택할 수 있는 input 타입
+    </p>
+    색상 선택 : <input type="color" name="color">
+    <br>
+
+    <h3>type="file"</h3>
+    <p>
+      - 첨부하고자 하는 파일을 선택할 수 있는 input 타입
+    </p>
+    첨부파일 : <input type="file" name="upload">
+
+    <br>
+
+    <h3>type="hidden"</h3>
+    <p>
+      - 특정 값을 화면에 노출시키지 않고 서버로 전송해야할 때
+    </p>
+    <input type="hidden" name="pageNum" value="3">
+
+    <br>
+
+    <h3>type="submit|reset|button"</h3>
+    <p>
+      - submit : 서버로 form 안에 있는 모든 값들을 전송
+      - reset : form 안의 값들을 초기화
+      - button : 일반 버튼 (기능 정의가 필요함)
+    </p>
+    <input type="button" value="버튼">
+    <input type="submit" value="전송">
+    <input type="reset" value="초기화">
+
+    <h3>button[type="submit|reset|button"]</h3>
+    <button type="submit">제출</button> &emsp;
+    <button type="reset">초기화</button><br>
+    <button>type을 생략하면 submit 버튼</button>
+  </form>
+
+  <br>
+  <hr>
+
+  <h2>select 태그와 option 태그</h2>
+  <p>
+    - 사용자에게 직접 키보드로 입력받는것이 아니라 내가 제시한 목록들 중 선택할 수 있는 태그
+    - 서버에 전송 시 선택된 option의 값이 전송됨
+  </p>
+  <form action="test.do">
+    국적 : <select name="national" id="nSelect" multiple>
+      <option value="kor">한국</option>
+      <option value="us">미국</option>
+      <option value="uk">영국</option>
+      <option value="rus">러시아</option>
+      <option value="jp">일본</option>
+    </select>
+    <br><br>
+    <input type="submit" value="전송">
+
+    <br><br>
+
+    메뉴 : <select name="food" id="food">
+      <option value="한식">한식</option>
+      <option value="양식">양식</option>
+      <option value="일식">일식</option>
+      <option value="중식">중식</option>
+    </select>
+    <br><br>
+    <input type="submit" value="전송">
+
+    <br><br>
+
+    <select>
+      <optgroup label="공과대학">
+        <option value="architect">건축공학과</option>
+        <option value="machine">기계공학과</option>
+        <option value="computer">컴퓨터공학과</option>
+        <option value="electric">전기전자공학과</option>
+      </optgroup>
+    </select>
+
+    <br><br>
+    <h3>datalist : html5에서 새로 추가된 기능</h3>
+    <p>
+      - 내가 제시한 목록 중에서 선택도 할 수 있고
+      - 목록에 없다면 직접 입력도 가능
+    </p>
+    제일 가고싶은 여행지 : 
+    <input list="travellist">
+    <datalist id="travellist">
+      <option value="us">미국</option>
+      <option value="uk">영국</option>
+      <option value="rus">러시아</option>
+      <option value="jp">일본</option>
+    </datalist>
+
+  </form>
 </body>
 </html>
