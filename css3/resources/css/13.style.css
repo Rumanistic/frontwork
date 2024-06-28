@@ -1,0 +1,63 @@
+.position{border: 1px solid;}
+.ye{background: yellow;}
+.yg{background: yellowgreen;}
+.red{background: red;}
+
+.outer{position: relative;}
+#_1{
+  width: 300px;
+  height: 300px;
+}
+#_2{
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  top: 200px;
+  left: 200px;
+}
+#_3{
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  margin-left: 200px;
+  margin-top: 100px;
+}
+
+#fixed-area{
+  width: 100px;
+  height: 100px;
+  /* position: fixed; */
+}
+
+.z-test{
+  border: 1px solid;
+  width: 150px;
+  height: 100px;
+  position: absolute;
+}
+#z1{
+  top: 50px;
+  left: 0px;
+  z-index: 3; /* 어떤 숫자든 상관없이 앞으로 나오게 하고싶으면 기준이 되는 숫자보다 높으면 된다*/
+}
+#z2{
+  left: 100px;
+  z-index: 2;
+}
+#z3{
+  top: 50px;
+  left: 200px;
+  z-index: 1;
+}
+
+.vis-test{
+  width: 100px;
+  height: 100px;
+}
+
+.float-test{
+  border: 1px solid;
+  width: 70px;
+  height: 30px;
+  float: left;
+}

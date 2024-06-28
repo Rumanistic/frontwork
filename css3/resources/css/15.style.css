@@ -1,0 +1,22 @@
+ul {
+  list-style-type: none;
+  padding: 0;
+  border: 2px solid;
+  height: 50vh;
+  width: 600px;
+  display: flex;
+  /* flex-direction: column; */
+  /* justify-content: center; */
+  flex-wrap: wrap;
+  align-content: end;
+}
+
+li {
+  width: 100px;
+  height: 100px;
+  background-color: rgba(0,255,255,0.2);
+  border: 2px solid;
+  margin: 5px;
+  text-align: center;
+  line-height: 100px;
+}

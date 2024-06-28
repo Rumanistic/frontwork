@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>테이블 관련 스타일</title>
+  <style>
+    table{
+      border: 1px solid;
+      border-collapse: separate;
+      border-spacing: 2px;
+    }
+    thead, tfoot{
+      background-color: rgba(0,255,255, 40%);
+    }
+    tbody{
+      background-color: beige;
+    }
+    th{
+      width: 150px;
+      height: 20px;
+      padding: 2px 5px;
+      text-align: center;
+      vertical-align: middle;
+      border: 2px solid orange;
+      word-break: break-all;
+    }
+    td{
+      padding-left: 5px;
+    }
+    .number{
+      text-align: right;
+    }
+    .borderTop{
+      border-top: 3px double grey;
+    }
+  </style>
+</head>
+<body>
+  <h1>테이블 관련 스타일</h1>
+  <!-- table>caption+thead>tr>th*3^^tbody>tr>td*3^^tfoot -->
+  <table>
+    <caption>[표 1] 웹 브라우저의 종류</caption>
+    <thead>
+      <tr>
+        <th>브라우저명</th>
+        <th>제조사</th>
+        <th>HomepageHomepage HomepageHomepage HomepageHomepage HomepageHomepage HomepageHomepageHomepageHomepageHomepageHomepageHomepageHomepageHomepageHomepageHomepageHomepage</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Edge</td>
+        <td>MS</td>
+        <td>https://microsoft.com</td>
+      </tr>
+      <tr>
+        <td>Chrome</td>
+        <td>google</td>
+        <td>https://google.com</td>
+      </tr>
+      <tr>
+        <td>Safari</td>
+        <td>Apple</td>
+        <td>https://apple.com</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="2" class="borderTop">총 브라우저 수</td>
+        <td class="number borderTop">3</td>
+      </tr>
+    </tfoot>
+  </table>
+</body>
+</html>

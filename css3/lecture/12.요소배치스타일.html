@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>요소 배치 스타일</title>
+</head>
+<body>
+  <!-- 
+    블럭 요소 : 한줄로 영역을 차지하는 요소
+    인라인 요소 : content 부분만 영역을 차지하는 요소
+
+    * 요소 영역 : content + padding + border 영역
+    * 요소 바깥쪽 영역 : margin 영역
+   -->
+  <h1>display : 화면 배치 방법</h1>
+  <pre>
+    선택자 {
+      display: inline|block|inline-block
+    }
+  </pre>
+
+  <h4>display:inline</h4>
+  <div class="display-test inline red">첫번째</div>
+  <div class="display-test inline orange">두번째</div>
+  <div class="display-test inline yellow">세번째</div>
+  <div class="display-test inline green">네번째</div>
+  <div class="display-test inline blue">다섯번째</div>
+  <p>
+    <b style="color: red">display:inline만 하게되면 width와 height의 스타일 속성은 적용되지 않음</b>
+  </p>
+
+  <style>
+    .display-test{
+      border: 1px solid;
+      width: 150px;
+      height: 150px;
+    }
+    .red{background-color: red;}
+    .orange{background-color: orange;}
+    .yellow{background-color: yellow;}
+    .green{background-color: greenyellow;}
+    .blue{background-color: skyblue;}
+    .inline{display: inline;}
+    .inline-block{display: inline-block;}
+    .block{display: block;}
+  </style>
+
+  <h4>display:inline-block</h4>
+  <div class="display-test inline-block red">첫번째</div>
+  <div class="display-test inline-block orange">두번째</div>
+  <div class="display-test inline-block yellow">세번째</div>
+  <div class="display-test inline-block green">네번째</div>
+  <div class="display-test inline-block blue">다섯번째</div>
+
+  <h3>* display:block</h3>
+  <span class="display-test block red">첫번째</span>
+  <span class="display-test block orange">두번째</span>
+  <span class="display-test block yellow">세번째</span>
+  <span class="display-test block green">네번째</span>
+  <span class="display-test block blue">다섯번째</span>
+</body>
+</html>
