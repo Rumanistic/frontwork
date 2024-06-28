@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>글꼴관련스타일</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Moirai+One&display=swap" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Moirai+One&family=Nabla&display=swap" rel="stylesheet">
+</head>
+<body>
+  <h1>글꼴 관련 스타일 속성(font~)</h1>
+  <h3>font-family : 글꼴을 지정할 때 사용</h3>
+  <pre>
+    선택자 {
+      font-family : 글꼴명, 글꼴명(차선책);
+    }
+  </pre>
+
+  <p id="ff1">국회는 의장 1인과 부의장 2인을 선출한다. 국회의원과 정부는 법률안을 제출할 수 있다.</p>
+  <p id="ff2">asas;ldkfjas;lkjf;laskhdf;lkajs<br>;ldkfj;alijhewl;kjf;lskdhg;lksjdfl;j<br>모든 국민은 건강하고 쾌적한 환경에서 생활할 권리를 가지며, 국가와 국민은 환경보전을 위하여 노력하여야 한다. 누구든지 병역의무의 이행으로 인하여 불이익한 처우를 받지 아니한다.  </p>
+  <p id="ff3">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor numquam unde natus, ad quibusdam, quae asperiores accusamus, iusto cupiditate maiores placeat eligendi? Officia velit saepe aut minus fugiat explicabo rerum!</p>
+
+  <!--  -->
+  <style>
+    #ff1 {
+      font-family: 궁서체, "YJ INJANG";
+    }
+
+    #ff2 {
+      font-family: Webdings;
+    }
+ 
+
+    #ff3 {
+      font-family: 나눔바른펜;
+    }
+  </style>
+  <br><br>
+
+  <h3>* 외부 웹 폰트 사용하는 방법</h3>
+  <p>
+    웹 폰트 사이트 : 
+    <a href="fonts.google.com" target="_blank">구글 폰트 사이트</a>
+  </p>
+
+  <p id="wf1">대통령은 국가의 안위에 관계되는 중대한 교전상태에 있어서 국가를 보위하기 위하여 긴급한 조치가 필요하고 국회의 집회가 불가능한 때에 한하여 법률의 효력을 가지는 명령을 발할 수 있다.</p>
+  <p id="wf2">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum, perferendis!</p>
+  
+  <style>
+    #wf1 {
+      font-family: "Moirai One", system-ui;
+      font-weight: 400;
+      font-style: normal;
+      font-size: xx-large;
+      background-color: black;
+      color: cyan;
+    }
+
+    #wf2 {
+      font-family: "Nabla", system-ui;
+      font-optical-sizing: auto;
+      font-weight: 400;
+      font-style: normal;
+      font-size: xx-large;
+      font-variation-settings:
+        "EDPT" 100,
+        "EHLT" 12;
+    }
+
+  </style>
+
+  <br><br>
+
+  <h3>font-size : 글꼴 크기를 지정할 때 사용</h3>
+  <pre>
+    선택자 {
+      font-size : (px|em|%);
+    }
+    - px : 픽셀단위 고정크기
+    - em : 부모 요소 크기의 배수
+    - rem : HTML 태그의 기본 글꼴 크기의 배수
+    - % : 상위 요소 폰트크기의 비율로 계산
+
+    - vw : 현재 보이는 창의 크기에 따라 값이 변한다(창이 1000px 이면 1vw = 10px)
+    - vh : vw와 동일
+
+    옵션들
+      * 고정값
+        xx-small : 10px
+        x-small : 10px
+        small : 13px
+        medium : 16px
+        large : 18px
+        x-large : 24px
+        xx-large : 32px
+
+      * 상대값
+        larger : 부모의 글자크기에 1/5를 더함( ~= 120%, 1.2em)
+        smaller : 부모의 크기에 1/6을 뺌( ~= 87%, 0.87em)
+
+  </pre>
+
+  <ul>
+    <li id="fs1">가변크기 px테스트</li>
+    <li id="fs2">가변크기 em테스트</li>
+    <li id="fs3">가변크기 rem테스트</li>
+    <li id="fs4">가변크기 %테스트</li>
+  </ul>
+  <!--  -->
+  <style>
+    #fs1{
+      font-size: 20px;
+    }
+
+    #fs2{
+      font-size: 1.5em;
+    }
+
+    #fs3{
+      font-size: 1.5rem;
+    }
+
+    #fs4{
+      font-size: 150%;
+    }
+  </style>
+
+  <br>
+
+  <h3>font-weight : 글꼴의 두께 지정</h3>
+  <pre>
+    선택자 {
+      font-weight : normal|bold|bolder|lighter|100|400|900;
+    }
+  </pre>
+
+  <ul>
+    <li>원래 굵기</li>
+    <li id="fw1">굵은 글꼴로 변경</li>
+    <li id="fw2">원래 굵기보다 더 굵게</li>
+    <li id="fw3">원래 굵기보다 더 가늘게</li>
+  </ul>
+
+  <!--  -->
+  <style>
+    #fw1{
+      font-weight: bold;
+    }
+    #fw2{
+      font-weight: 900;
+    }
+    #fw3{
+      font-weight: 100;
+    }
+  </style>
+
+  <br>
+
+  <h3>font-variant : 영문 텍스트 문구를 작은 대문자로 변경할 때 사용</h3>
+  <pre>
+    선택자 {
+      font-variant : small-caps;
+    }
+  </pre>
+
+  <p style="font-variant: small-caps;">aasl;ajfldhkas;dlkjaldj</p>
+
+  <br><br>
+
+  <h3>font-style : 텍스트 문구를 기울이고자 사용</h3>
+  <pre>
+    선택자 {
+      font-style : normal|italic|oblique;
+    }
+  </pre>
+
+  <br><br>
+
+  <p style="font-style: italic;">일미니일미;낭;ㅣ라ㅓㅁ니;아ㅓ림;ㅓㄴㄹㅇㅎ</p>
+  <p style="font-style: oblique;">일미니일미;낭;ㅣ라ㅓㅁ니;아ㅓ림;ㅓㄴㄹㅇㅎ</p>
+</body>
+</html>

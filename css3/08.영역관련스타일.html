@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>영역 관련 스타일</title>
+  <style>
+    .test{
+      width: 100px;
+      height: 100px;
+      padding-left: 10%;
+      padding-right: 10%;
+      background-color: gold;
+      border: 10px solid;
+    }
+  </style>
+</head>
+<body>
+  <h1>여백 및 간격 관련 스타일</h1>
+
+  <h2>요소선택 == content(내용) + padding(안쪽여백) + boarder(테두리)</h2>
+  
+  <h4>div</h4>
+  <div class="test">기준 div</div>
+
+  <h3>padding</h3>
+  <p>
+    내용물 영역과 테두리 영역 사이의 거리를 조절하는 스타일 옵션
+  </p>
+
+  <div class="test" id="test1">컨텐츠영역</div>
+  <div class="test" id="test2">컨텐츠영역</div>
+  <div class="test" id="test3">컨텐츠영역</div>
+
+  <style>
+    #test1{
+      padding: 80px;
+    }
+    #test2{
+      padding-top: 100px;
+      padding-right: 20px;
+      padding-bottom: 30px;
+      padding-left: 10px;
+    }
+    #test3{
+      padding: 20px 50px; /* 상하 20px | 좌우 50px 패딩 */
+      padding: 20px 50px 100px; /* 상 20px | 좌우 50px |하 100px 패딩 */
+    }
+  </style>
+
+  <br><br>
+
+  <h3>margin</h3>
+  <p>
+    요소들 간의 간격을 조정할 때 사용
+  </p>
+
+  <div class="test" id="test4">컨텐츠영역</div>
+  <div class="test" id="test5">컨텐츠영역</div>
+  <div class="test" id="test6">컨텐츠영역</div>
+
+  <style>
+    #test4{
+      margin: 50px;
+    }
+    #test5{
+      margin-top: 30px;
+      margin-bottom: 50px;
+      margin-left: 10px;
+    }
+    #test6{
+      margin: 30px 50px 80px 100px;
+      margin: auto;
+    }
+  </style>
+</body>
+</html>

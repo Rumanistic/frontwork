@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>목록 관련 스타일</title>
+  <style>
+    #ul1{
+      list-style-type: "🤣";
+      /* list-style-image: url(./resources/img/arrow.png); */
+    }
+
+    #ol1{
+      /* list-style-type: "✔"; */
+      list-style-type: decimal-leading-zero;
+      list-style-position: inside;
+    }
+  </style>
+</head>
+<body>
+  <h1>목록 관련 스타일(list~)</h1>
+
+  <h3>list-style-type : 불릿기호를 변경시켜줄 때 사용</h3>
+  <h3>list-style-image : 불릿기호로 이미지를 적용할 때 사용</h3>
+  <h3>list-style-position : 불릿기호의 위치를 지정할 때 사용</h3>
+
+  <pre>
+    * 순서가 없는 목록(ul)
+    선택자 {
+      list-style-type : disc[기본값]|circle|square|none;
+    }
+
+    * 순서가 있는 목록(ol)
+    선택자 {
+      list-style-type : decimal[기본값]|decimal-leading-zero;
+      list-style-type : lower-alpha|upper-alpha;
+      list-style-type : lower-roman|upper-roman;
+    }
+  </pre>
+
+  <h4>순서가 없는 목록</h4>
+  <ul id="ul1">
+    <li>HTML</li>
+    <li>CSS</li>
+    <li>JavaScript</li>
+    <li>jQuery</li>
+  </ul>
+
+  <h4>순서가 있는 목록</h4>
+  <ol id="ol1">
+    <li>HTML</li>
+    <li>CSS</li>
+    <li>JavaScript</li>
+    <li>jQuery</li>
+  </ol>
+
+</body>
+</html>

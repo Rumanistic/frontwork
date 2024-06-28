@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>선택자우선순위</title>
+  <style>
+    h1 {
+      background-color: antiquewhite;
+      color: brown;
+    }
+    
+    h1{
+      background-color: beige;
+    }
+
+    #i1{
+      background-color: wheat;
+      color: turquoise;
+      margin-left: 25%;
+    }
+
+    .c1{
+      text-align: right;
+      color: aliceblue;
+      width: 50%;
+    }
+
+    div{
+      background-color: steelblue !important;
+      width: 100%;
+      height: 50px;
+      text-align: center;
+    }
+
+  </style>
+</head>
+<body>
+  <h1>선택자 우선순위</h1>
+  <p>
+    기본적으로 css는 위에서부터 아래로 적용됨<br>
+    동일한 요소를 다양한 선택자로 css가 부여된 경우 우선순위에 따라 적용<br><br>
+    중복되지 않는 속성을 적용한다면 통합되어 적용되나,<br>
+    동일한 속성을 적용한다면 우선순위가 높은 쪽이 적용됨<br><br>
+    tag 선택자 -> class 선택자 -> id 선택자 -> inline 스타일방식 -> !important
+  </p>
+
+  <div class="c1" id="i1">우선순위 테스트</div>
+</body>
+</html>

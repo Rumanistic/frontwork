@@ -98,12 +98,24 @@
       선택자:hover {
         스타일속성 : 값;
       }
+
+    * 링크 태그에서 방문하기 전의 스타일 부여
+      선택자:link {
+        스타일속성 : 값;
+      }
+
+    * 링크 태그에서 방문한 후의 스타일 부여
+    선택자:visited {
+      스타일속성 : 값;
+    }
   </pre>
 
   <div id="active-test" class="area">click test</div>
   <br><br>
   <div id="hover-test" class="area">hover test</div>
-  <br>
+  <br><br>
+  <a id="link" href="https://www.naver.com" target="_blank">네이버로 이동</a>
+  <br><br>
 
   <ul id="test3">
     <li></li>
@@ -156,5 +168,72 @@
 
   <button>클릭가능</button>
   <button disabled>클릭불가능</button>
+  <br><br>
+  <hr>
+
+  <h2>6. 일반 구조 선택자</h2>
+  <p>
+    특정한 위치에 있는 태그를 선택하는 선택자
+  </p>
+  <pre>
+    :first-child    -> 형제 관계 태그 중 첫번째 태그 선택
+    :last-child     -> 형제 관계 태그 중 마지막 태그 선택
+    :nth-child      -> 형제 관계 태그 중 특정 번째 태그 선택
+    :nth-last-child -> 형제 관계 태그 중 뒤에서 특정 번째 태그 선택
+  </pre>
+
+  <!-- div#summer>p{여름$}*5 -->
+  <div id="summer">
+    <p>여름1</p>
+    <p>여름2</p>
+    <p>여름3</p>
+    <p>여름4</p>
+    <p>여름5</p>
+  </div>
+
+  <br><br>
+  <hr>
+
+  <h2>7. 형태 구조 선택자</h2>
+  <p>
+    특정한 위치에 있는 태그를 선택하는 선택자
+  </p>
+  <pre>
+    :first-of-type      -> 형제 관계 태그 중 첫번째로 위치한 특정 태그 선택
+    :last-of-type       -> 형제 관계 태그 중 마지막에 위치한 특정 태그 선택
+    :nth-of-type()      -> 형제 관계 태그 중 특정 번째에 위치한 특정 태그 선택
+    :nth-last-of-type() -> 형제 관계 태그 중 뒤에서 특정 번째에 위치한 특정 태그 선택
+  </pre>
+
+  <div id="fall">
+    <p>가을1</p>
+    <p>가을2</p>
+    <div>가을d1</div>
+    <p>가을3</p>
+    <button>버튼1</button>
+    <p>가을4</p>
+    <div>가을d2</div>
+    <p>가을5</p>
+    <div>가을d3</div>
+  </div>
+
+  <br><br>
+  <hr>
+
+  <h2>8. 부정 선택자</h2>
+  <p>
+    특정 선택 요소를 제외한 나머지 요소들의 스타일 적용
+  </p>
+  <pre>
+    요소:not(선택자)
+  </pre>
+
+  <div id="winter">
+    <p>겨울1</p>
+    <p>겨울2</p>
+    <p>겨울3</p>
+    <p>겨울4</p>
+    <p>겨울5</p>
+  </div>
 </body>
 </html>

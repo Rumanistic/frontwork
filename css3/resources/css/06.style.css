@@ -1,0 +1,76 @@
+/*  */
+#c {
+  color: red;
+  color: #0100ff;
+  color: rgb(201,0,167);
+  color: rgba(201,0,167,0.5);
+  color: hsl(275,100%,90%);
+}
+
+
+/*  */
+#td1 {
+  text-decoration: underline;
+}
+#td2 {
+  text-decoration: line-through;
+}
+#td3 {
+  text-decoration: overline;
+}
+
+
+/*  */
+
+
+
+/*  */
+.shadow {
+  font-size: 50px;
+  font-weight: 900;
+}
+#ts1{
+  color: red;
+  text-shadow: 5px 5px 5px black;
+}
+#ts2{
+  color: yellow;
+  text-shadow: 0px 0px 4px black;
+}
+#ts3{
+  color: green;
+  text-shadow: -10px 5px 5px black
+              , -5px 0 green;
+}
+
+
+/*  */
+#justify{
+  text-align: justify;
+}
+#right{
+  text-align: right;
+}
+#center{
+  text-align: center;
+}
+
+
+/*  */
+#lh1{
+  line-height: 10px;
+}
+#lh2{
+  line-height: 2em;
+}
+#lh3{
+  line-height: 150%;
+}
+
+#test{
+  width: 200px; 
+  height: 200px;
+  background-color: beige;
+  text-align: center;
+  line-height: 200px;
+}
