@@ -1,0 +1,27 @@
+#wrapper {
+  width: 100%;
+}
+
+header {
+  height: 60px;
+  line-height: 60px;
+}
+
+section {
+  float: left;
+  width: 70%;
+  height: 300px;
+  background-color: yellowgreen;
+}
+
+aside {
+  float: right;
+  width: 27%;
+  background-color: aqua;
+}
+
+footer {
+  clear:both;
+  height: 50px;
+  line-height: 50px;
+}

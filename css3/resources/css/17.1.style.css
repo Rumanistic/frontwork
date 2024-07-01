@@ -1,0 +1,49 @@
+#wrapper {
+  width: 950px;
+  margin: 0 auto;
+  border: 1px solid;
+}
+
+/* 헤더 */
+header {
+  width: 950px;
+  height: 120px;
+  background-color: khaki;
+  border-bottom: 1px solid;
+}
+#variable {
+  display: none;
+}
+
+header > .header-text {
+  font-size: 40px;
+  color: brown;
+  text-align: center;
+  line-height: 120px;
+}
+
+.content {
+  float: left;
+  width: 80%;
+  height: 400px;
+  background-color: skyblue;
+}
+
+.right-side {
+  float: right;
+  width: 10%;
+  height:400px;
+  background-color: violet;
+}
+
+.left-side {
+  float: left;
+  width: 10%;
+  height:400px;
+  background-color: violet;
+}
+
+
+footer {
+  background-color: yellowgreen;
+}

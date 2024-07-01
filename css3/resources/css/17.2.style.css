@@ -1,0 +1,53 @@
+#wrapper {
+  width: 100%;
+  margin: 0 auto;
+  border: 1px solid;
+}
+
+/* 헤더 */
+header {
+  width: 100%;
+  height: 120px;
+  background-color: khaki;
+  border-bottom: 1px solid;
+}
+#fixed {
+  display: none;
+}
+
+header > .header-text {
+  position: relative;
+  font-size: 40px;
+  color: brown;
+  text-align: center;
+  line-height: 120px;
+}
+
+.content {
+  position: absolute;
+  margin-left: 10%;
+  width: 75%;
+  height: 400px;
+  background-color: skyblue;
+}
+
+.right-side {
+  float: right;
+  width: 10%;
+  height:400px;
+  background-color: violet;
+}
+
+.left-side {
+  float: left;
+  width: 10%;
+  height:400px;
+  background-color: violet;
+}
+
+
+footer {
+  background-color: yellowgreen;
+  height: 120px;
+  clear: both;
+}

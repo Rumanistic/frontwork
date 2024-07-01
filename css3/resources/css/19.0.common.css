@@ -1,0 +1,17 @@
+header {
+  background-color: bisque;
+  text-align: center;
+}
+
+header > h1 {
+  color: cyan;
+}
+
+section, aside{
+  padding: 2px;
+}
+
+footer {
+  background-color: cyan;
+  text-align: center;
+}

@@ -1,0 +1,109 @@
+body, header {
+width: 100%;
+}
+
+section {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+header > h1 {
+  font-size: 3em;
+  text-align: center;
+}
+
+aside.food{
+  float: left;
+  background-color: bisque;
+  width:10%;
+  height:100%;
+  font-size: 2em;
+}
+
+aside.view{
+  float: right;
+  background-color: bisque;
+  width:10%;
+  height: max-content;
+  font-size: 2em;
+}
+
+section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-content: center;
+}
+section.food{
+  float: unset;
+}
+section.view{
+  clear: both;
+  float: unset;
+}
+
+.foods h2{
+  position: absolute;
+  right: 5%;
+  bottom: 2px;
+  color: white;
+  text-shadow: 1px 1px 5px black;
+}
+
+.views h2{
+  position: absolute;
+  left: 5px;
+  top: 2px;
+  color: cyan;
+  text-shadow: 1px 1px 5px black;
+}
+
+section > div {
+  position: relative;
+  height: 300px;
+  border: 1px solid rgb(179, 255, 0);
+  margin-bottom: 20px;
+  background-size: cover;
+  width: 400px;
+}
+
+#menu1 {
+  background: url("../img/breakfast.png") no-repeat center;
+}
+
+#menu2 {
+  background: url("../img/lunch.png") no-repeat ;
+}
+
+#menu3 {
+  background: url("../img/dessert.png") no-repeat center;
+}
+
+#menu4 {
+  background: url("../img/dinner.png") no-repeat center;
+}
+
+#menu5 {
+  background: url("../img/yasik.png") no-repeat center;
+}
+
+#menu6 {
+  background: url("../img/skyline-4335245_640.jpg") no-repeat center;
+}
+
+#menu7 {
+  background: url("../img/nature-3125912_640.jpg") no-repeat center;
+}
+
+#menu8 {
+  background: url("../img/lake-2755907_640.jpg") no-repeat center;
+}
+
+#menu9 {
+  background: url("../img/fall-4667080_640.jpg") no-repeat center;
+}
+
+#menu10 {
+  background: url("../img/winter-7685665_640.jpg") no-repeat center;
+}
+

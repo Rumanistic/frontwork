@@ -1,0 +1,95 @@
+body, header, section {
+  width: 100%;
+}
+
+header > h1 {
+  font-size: 3em;
+  text-align: center;
+}
+
+section{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+section > div {
+  position: relative;
+  height: 400px;
+  border: 1px solid rgb(179, 255, 0);
+  margin-bottom: 20px;
+  background-size: cover;
+  width: 400px;
+}
+
+section h2 {
+  position: absolute;
+  padding: 5px;
+  font-size: 2em;
+  color: cyan;
+  text-shadow: 2px 2px 5px;
+  right: 3%;
+  bottom: 10px;
+}
+
+#menu1 {
+  background: url("../img/breakfast.png") no-repeat center;
+}
+
+#menu2 {
+  background: url("../img/lunch.png") no-repeat center;
+}
+
+#menu3 {
+  background: url("../img/dessert.png") no-repeat center;
+}
+
+#menu4 {
+  background: url("../img/dinner.png") no-repeat center;
+}
+
+#menu5 {
+  background: url("../img/yasik.png") no-repeat center;
+}
+
+footer {
+  width: 100%;
+  background-color: salmon;
+  height: 100px
+}
+
+footer p {
+  font-size: 1.7em;
+  font: bold;
+  color: skyblue;
+  text-align: center;
+  line-height: 100px;
+}
+
+@media all and(min-width:300px) and(max-width:550px) {
+  section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  #menu1, #menu2, #menu3, #menu4 {
+    width: 49%;
+  }
+  #menu5{
+    width: 100%;
+  }
+}
+
+@media all and(min-width:700px) {
+  section {
+    display: flex;
+    flex-wrap: nowrap;
+  }
+  
+  #menu1, #menu2, #menu3, #menu4 {
+    width: 33%;
+  }
+  #menu5{
+    width: 66%;
+  }
+}
