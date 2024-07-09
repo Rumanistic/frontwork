@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./resources/js/script.js" rul="javascript"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet" href="./resources/css/common.css">
+</head>
+<body>
+  <div>
+    <fieldset>
+      <p style="display:none;" id="data" name="selected"></p>
+      <legend>이미지선택</legend>
+      <input class="imgs" type="checkbox" name="card" id="red" value="red" checked>
+      <label for="red"></label>
+      <input class="imgs" type="checkbox" name="card" id="orange" value="orange" checked>
+      <label for="orange"></label>
+      <input class="imgs" type="checkbox" name="card" id="yellow" value="yellow" checked>
+      <label for="yellow"></label>
+      <input class="imgs" type="checkbox" name="card" id="green" value="green" checked>
+      <label for="green"></label>
+      <input class="imgs" type="checkbox" name="card" id="blue" value="blue" checked>
+      <label for="blue"></label>
+      <input class="imgs" type="checkbox" name="card" id="indigo" value="indigo" checked>
+      <label for="indigo"></label>
+      <input class="imgs" type="checkbox" name="card" id="purple" value="purple" checked>
+      <label for="purple"></label>
+    </fieldset>
+  </div>
+
+
+
+
+
+
+  <div class="modal" id="modal">
+    <div class="modal_body">
+      <aside id="imgside">
+      </aside>
+      <section>
+        <h2>modaltitle</h2>
+        <p>modaltext</p>
+      </section>
+    </div>
+    <button class="btn-close-modal" onclick="closeModal();"></button>
+  </div>
+  <button class="btn-open-modal" onclick="openModal();">button</button>
+</body>
+</html>

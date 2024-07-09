@@ -1,5 +1,15 @@
+body {
+  width: 100%;
+  margin: 0 auto;
+  border: 1px solid black;
+}
+
 a {
   text-decoration: none;
   color: black;
   margin: 0 auto;
+}
+
+.bold {
+  font-weight: bold;
 }

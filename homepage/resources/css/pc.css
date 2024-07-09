@@ -14,12 +14,6 @@ pc
   footer
 */
 
-body {
-  width: 100%;
-  margin: 0 auto;
-  border: 1px solid black;
-}
-
 header {
   height: 60px;
 }
@@ -49,7 +43,6 @@ header {
   height: 60px;
   display: inline-flex;
   background-color: black;
-  font: bold;
   line-height: 60px;
 }
 
@@ -79,7 +72,6 @@ section {
 
 section > h3 {
   font-size: 2em;
-  font: bold;
   margin-left: 30px;
   line-height: 40px;
 }
@@ -107,11 +99,22 @@ aside img {
 
 footer {
   clear: both;
+  height: 180px;
+  padding-top: 30px;
+  padding-left: 20px;
   background-color: black;
+}
+
+footer span {
+  color: white;
+  font-size: 0.8em;
+  line-height: 20px;
+  text-align: left;
 }
 
 footer > p {
   color: white;
-  line-height: 30px;
-  text-align: center;
+  font-size: 0.8em;
+  line-height: 20px;
+  text-align: left;
 }

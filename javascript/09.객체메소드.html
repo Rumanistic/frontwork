@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .area {
+      border: 1px solid;
+    }
+    .small {
+      width: 200px;
+    }
+    .big {
+      width: 400px;
+    }
+  </style>
+</head>
+<body>
+  <h1>객체 메소드</h1>
+  <h3>* 객체 메소드 속성</h3>
+  <p>
+    객체의 속성 중 함수 자료형인 속성을 메소드라고 부름
+  </p>
+
+  <button onclick="test1();">실행</button>
+  <div class="area small" id="area1"></div>
+
+  <script>
+    test1 = () => {
+      let area1 = document.getElementById('area1');
+      let name = '이고잉';
+
+      let dog = {
+        name : 'dog',
+        kind : 'beagle',
+        eat : function(food) {
+          area1.innerHTML += 'eat 메소드가 호출됨<br>';
+          area1.innerHTML += `${food}<br>`;
+          area1.innerHTML += `${this.kind}종류인 ${this.name}가 ${food}를 먹고 있어요<br>`
+        }
+      }
+
+      dog.eat('사과');
+      area1.innerHTML += '<hr>';
+
+      name = '우재남';
+      let age = 25;
+
+      // legacy
+      const p1 = {
+        name : name,
+        age : age,
+        fun1 : function(){
+          const result = this.name.toUpperCase();
+          area1.innerHTML += result + '!!!<br>';
+        },
+        setAge : function(newAge){
+          this.age = newAge;
+          area1.innerHTML += '나이 : ' + this.age + '<br>';
+        }
+      };
+      p1.fun1();
+      p1.setAge(30);
+
+      // ES6(2015)
+      const p2 = {
+        name,
+        age,
+        fun1() {
+          const result = this.name.toUpperCase();
+          area1.innerHTML += result + '!!!<br>';
+        },
+        setAge() {
+          this.age = newAge;
+          area1.innerHTML += '나이 : ' + this.age + '<br>';
+        }
+      }
+    }
+  </script>
+
+  <hr>
+
+  <h3>* in과 with 키워드</h3>
+  <p>
+    in : 객체 내에 해당 속성이 있는지 확인해주는 키워드(존재하면 true)
+    with : 객체의 속성에 접근 시 객체명 제시를 생략할 수 있음(숏코딩 키워드)
+  </p>
+  이름 : <input type="text" id="name"><br>
+  국어 : <input type="text" id="kor"><br>
+  수학 : <input type="text" id="math"><br>
+  영어 : <input type="text" id="eng"><br>
+  <button onclick="test2();"></button>
+  <div class="area big" id="area2"></div>
+
+  <script>
+    test2 = () => {
+      let area2 = document.getElementById('area2');
+      const student = {
+        name : document.querySelector("#name").value,
+        kor : document.querySelector("#kor").value,
+        math : document.querySelector("#math").value,
+        eng : document.querySelector("#eng").value,
+        toString : function() {
+          return `${this.name}, ${this.kor}, ${this.math}, ${this.eng}`;
+        },
+        getSum : function() {
+          let i = parseInt(this.kor) + parseInt(this.math) + parseInt(this.eng);
+          return i;
+        },
+        getAvg : function() {
+          let i = Math.round((this.getSum() / 3)*100)/100;
+          return i;
+        }
+      };
+      // 객체 호출 시 toString() 메소드로 호출되어
+      // toString 재정의 시 overriding 하여 재정의된 출력이 나옴
+      area2.innerHTML += `student : ${student}<br>`;
+      area2.innerHTML += `name 속성이 있는가? ${'name' in student}<br>`
+      area2.innerHTML += `age 속성이 있는가? ${'age' in student}<br>`
+
+      area2.innerHTML += `학생이름 : ${student.name}<br>`;
+      area2.innerHTML += `국어점수 : ${student.kor}<br>`;
+      area2.innerHTML += `수학점수 : ${student.math}<br>`;
+      area2.innerHTML += `영어점수 : ${student.eng}<br>`;
+      area2.innerHTML += `총점 : ${student.getSum()}<br>`;
+      area2.innerHTML += `평균 : ${student.getAvg()}<br>`;
+
+      area2.innerHTML += '<hr>';
+
+      with(student){
+        area2.innerHTML += `with학생이름 : ${name}<br>`;
+        area2.innerHTML += `with국어점수 : ${kor}<br>`;
+        area2.innerHTML += `with수학점수 : ${math}<br>`;
+        area2.innerHTML += `with영어점수 : ${eng}<br>`;
+        area2.innerHTML += `with총점 : ${getSum()}<br>`;
+        area2.innerHTML += `with평균 : ${getAvg()}<br>`;
+      }
+      
+    }
+  </script>
+</body>
+</html>

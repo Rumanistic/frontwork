@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./resources/js/03.jscript.js" rul="javascript"></script>
+  <style>
+    .area {
+      border: 1px solid;
+      width: 300px;
+      height: 100px;
+    }
+  </style>
+</head>
+<body>
+  <h1>HTML 요소에 접근하기(해당 요소 객체 가져오기)</h1>
+
+  <h3>1) 아이디를 이용해서 요소 가져오기</h3>
+  <div class="area" id="area1"></div>
+  <button onclick="accessID();">아이디로 접근</button>
+
+  <br><br>
+
+  <fieldset id="color">
+    <legend id="range1">range</legend>
+    <!-- oninput : input에 값이 들어오는 이벤트가 발생하면 호출 -->
+    <span>
+      <input oninput="setColor();" type="range" id="score_bar" min="0" max="100" value="0">
+    </span>
+    <span id="score">0</span>
+  </fieldset>
+  <br><br><br>
+  <div class="area" id="area2" style="background-color: cyan;"></div>
+  <button onclick="changeColor();">클릭할 때 마다 색 변경</button>
+
+  <br><br>
+
+  <h3>2) 태그명을 이용하여 요소 가져오기</h3>
+  <table>
+    <tr id="tr1">
+    </tr>
+    <tr id="tr2">
+    </tr>
+    <tr id="tr3">
+    </tr>
+  </table>
+
+  <button onclick="accessTagName();">태그명으로 접근</button>
+
+  <h3>3) name 속성을 이용해서 요소 가져오기</h3>
+  <form action="">
+    <fieldset>
+      <legend>취미</legend>
+      <input type="checkbox" name="hobby" value="game" id="game">
+      <label for="game">게임</label>
+      <input type="checkbox" name="hobby" value="music" id="music">
+      <label for="music">음악감상</label>
+      <input type="checkbox" name="hobby" value="sleep" id="sleep">
+      <label for="sleep">잠자기</label>
+      <input type="checkbox" name="hobby" value="movie" id="movie">
+      <label for="movie">영화감상</label>
+    </fieldset>
+  </form>
+  <br>
+
+  <div class="area" id="area3"></div>
+  <button onclick="accessName();">name으로 접근</button>
+
+  <br><br>
+
+  <h3>4) 클래스를 이용하여 요소 가져오기</h3>
+  <div class="test"></div>
+  <p class="test"></p>
+  <ul class="test">
+    <li></li>
+    <li></li>
+  </ul>
+  <pre class="test test1"></pre>
+  <button onclick="accessClass();">클래스로 접근</button>
+
+  <br><br>
+  <h3>5) 내가 원하는 요소를 자유자재로 가져오기(선택자 사용)</h3>
+
+  <div id="test2">테스트입니다</div>
+  <div class="test2">
+    <h2>a</h2>
+    <h2>b</h2>
+  </div>
+  <span>gsg</span>
+  <br>
+  <button onclick="accessSelector();">클릭</button>
+
+  <br>
+  <div>
+    <p class="cls1" id="p">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi facere nisi dicta repellat dolores quidem odit rem sequi enim, modi vitae doloremque? At perspiciatis eveniet, reiciendis ea facere modi neque.</p>
+    <p class="cls2" id="p">Rerum quos possimus voluptatem ducimus, laborum sequi adipisci praesentium totam sapiente. Aliquam aut recusandae provident! Reprehenderit consequatur dolor explicabo id, at molestiae eum, libero vero beatae similique esse eligendi? Eum.</p>
+    <p class="cls3" id="p">Laborum ullam natus temporibus non maxime ipsa repellendus quasi velit doloremque asperiores nam, ducimus aperiam voluptatibus quae alias quidem voluptates, aut neque laudantium nemo accusamus facilis cum, at voluptatem. Error!</p>
+  </div>
+
+  <button onclick="select();">querySelector</button>
+  <button onclick="selectAll();">querySelectorAll</button>
+</body>
+</html>

@@ -7,3 +7,109 @@ phone
   소개
   이미지(3줄로)
 */
+body {
+  margin: 0 auto;
+}
+
+header {
+  text-align: center;
+  height: 60px;
+}
+
+#logo {
+  margin-top: 3px;
+  height: 40px;
+}
+
+#login {
+  height: 30px;
+  margin-top: 11px;
+  margin-bottom: 5px;
+}
+
+#titleImg {
+  visibility: hidden;
+  height: 300px;
+  width: 100%;
+}
+
+.navi {
+  margin-top: 40px;
+  width: 100%;
+  height: 240px;
+  display: inline-flex;
+  flex-direction: column;
+  background-color: black;
+  line-height: 60px;
+}
+
+.navi a {
+  display: inline-block;
+  height: 60px;
+  width: 245px;
+  color: white;
+  text-align: center;
+}
+
+.navi a:link, .navi a:visited {
+  color: yellow;
+}
+
+.navi a:hover {
+  color: blue;
+  text-shadow: 2px 2px 5px red;
+}
+
+section {
+  width: 100%;
+  
+}
+
+section > h3 {
+  font-size: 2em;
+  margin-left: 10px;
+  line-height: 40px;
+}
+
+section > article > h4 {
+  font-size: 1.2em;
+  margin-left: 20px;
+}
+
+section > article > p {
+  margin-left: 40px;
+}
+
+aside {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  width: 100%;
+}
+
+aside img {
+  width: 100%;
+  height: 300px;
+}
+
+footer {
+  clear: both;
+  height: 180px;
+  padding-top: 30px;
+  padding-left: 20px;
+  background-color: black;
+}
+
+footer span {
+  color: white;
+  font-size: 0.8em;
+  line-height: 20px;
+  text-align: left;
+}
+
+footer > p {
+  color: white;
+  font-size: 0.8em;
+  line-height: 20px;
+  text-align: left;
+}

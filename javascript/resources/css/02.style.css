@@ -1,0 +1,11 @@
+table {
+  border: 1px solid black;
+}
+
+tr {
+  background-color: skyblue;
+}
+
+td {
+  border: 1px solid black;
+}

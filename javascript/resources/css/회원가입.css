@@ -1,0 +1,60 @@
+h1 {
+  text-align: center;
+}
+
+div.main {
+  border: 1px solid;
+  width: 50%;
+  height: auto;
+  margin-left: 25%;
+}
+
+table {
+  margin: auto;
+  width: 80%;
+  height: auto;
+}
+
+.index{
+  width: 27%;
+}
+
+.input {
+  width: 62%;
+  height: 40px;
+}
+
+td.info {
+  line-height: 40px;
+  /* align: center; */
+}
+
+div.btnDiv{
+  width: 98%;
+  display: flex;
+  justify-content: center;
+}
+
+div>span {
+  width: 48%;
+  display: flex;
+  flex-direction: column;
+}
+
+.areaL{
+  align-items: flex-end;
+  width: 130px;
+  height: 30px;
+}
+
+.areaR{
+  align-items: flex-start;
+  width: 130px;
+  height: 30px;
+}
+
+.button {
+  width: 130px;
+  height: 30px;
+  margin: 0 10% 0;
+}

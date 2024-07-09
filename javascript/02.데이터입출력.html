@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./js/02.jscript.js" rul="javascript"></script>
+  <link rel="stylesheet" href="./css/02.style.css">
+  <style>
+    .area {
+      border: 1px solid;
+      width: 700px;
+    }
+  </style>
+</head>
+<body>
+  <h2>1. 데이터 출력하는 구문</h2>
+  <ol>
+    <li>[window.]alert("알림창에 출력할 문구");</li>
+    <li>[window.]console.log("콘솔창에 출력할 문구");</li>
+    <li>document.write("화면에 출력할 문구");</li>
+    <li>선택한요소.innerHTML|innerText="요소에 출력할 문구"</li>
+  </ol>
+
+  <h3> 3) document.write</h3>
+  <button onclick="docWrite()">화면에 출력</button>
+
+  <h3>4) 선택한요소.innerHTML|innerText="요소에 출력할 문구"</h3>
+  <div class="area" id="area1">
+    자바스크립트에서 어떤 요소(element)안의 값(content)을 가지고 온다거나<br>
+    변경하고자 할 때 <b>innerHTML, innerText</b>라는 속성에 접근해서 가능
+  </div>
+
+  <button onclick="tagValue()">확인</button>
+
+  <h2>2. 데이터 입력받는 구문(변수에 기록 가능)</h2>
+  <p>
+    1) 변수 = [window.]confirm("질문내용");<br>
+    2) 변수 = [window.]prompt("질문내용");<br>
+    3) 변수 = 선택한요소.속성(id,className,innerHTML,innerText, ...);<br>
+    4) 변수 = 선택한input요소.value;
+  </p>
+
+  <h3>1) [window.]confirm();</h3>
+  <p>
+    confirm 호출 시 "질문내용"과 "확인/취소" 버튼이 존재하는 알림창 발생<br>
+    확인 버튼 클릭 시 true, 취소 버튼 클릭 시 false 반환
+  </p>
+
+  <button onclick="testFunc()" id="tf">클릭</button>
+
+  <h3>2) [window.]prompt();</h3>
+  <p>
+    prompt 호출 시 "질문내용"과 입력할 수 있는 "텍스트 상자"와<br>
+    "확인/취소" 버튼이 보여지는 알림창 발생<br>
+    확인 버튼 클릭 시 텍스트 상자에 입력한 문자열 반환, 취소 버튼 클릭 시 null 반환
+  </p>
+
+  <button onclick="promptFunc()" id="pf">프롬프트</button>
+  <button onclick="nameAge()">정보</button>
+  <div id="area3"></div>
+
+  <button onclick="promptFunc2()">숫자입력</button>
+  <div id="area4"></div>
+
+  <h3>4) 선택한input요소.value;</h3>
+  아이디 : <input id="userID"><br>
+  비밀번호 : <input type="password" id="userPW">
+  <button onclick="logIn();">로그인</button>
+  <input type="text" id="area5">
+</body>
+</html>

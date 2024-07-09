@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .area{
+      border: 1px solid black;
+      width: 400px;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>변수와 자료형</h1>
+  <h2>변수 선언 시 var뿐만 아니라 let, const를 이용하여 선언 가능</h2>
+
+  <h3>* var, let, const의 차이점</h3>
+  <h4>1) 변수의 선언 방법</h4>
+  <div id="diff"></div>
+  <button onclick="diffDeclare();"></button>
+
+  <script>
+    function diffDeclare() {
+      // var : 중복 선언 가능, 재할당 가능
+      /* 
+        중복 선언된 변수가 난발될 수 있고, 의도치 않게 값이 변경될 수 있어서 
+        let과 const를 사용하는것을 권장
+      */
+      var userID = "user01";
+      console.log(userID);
+      var userID = "user02";
+      console.log(userID);
+      userID = "user03";
+      console.log(userID);
+
+      console.log("----------------------------------------------------")
+
+      // let : 중복 선언 불가, 재할당 가능
+      let userPW = "pass01";
+      console.log(userPW);
+      // let userPW = "password02";
+
+      userPW = "pass03";
+      console.log(userPW);
+
+      // const : 중복 선언 불가, 재할당 불가 - 객체 안의 자료는 변경 가능
+      const userName = "홍길동";
+      console.log(userName);
+
+      // userName = "김말똥";
+      // console.log(userName);
+    }
+  </script>
+
+  <h4>2) 스코프(사용가능 범위)</h4>
+  <button onclick="diffScope();"></button>
+
+  <script>
+    function diffScope() {
+      const iter = "age";
+      // var : 변수가 선언된 함수 영역 내에서 사용 가능
+      var name = "홍길동";
+
+      if(true){
+        var age = 20;
+      }
+
+      console.log(name + " | " + age);
+      
+      for(var i = 0; i < 10; i++){
+      }
+      console.log(i);
+      
+      console.log("-----------------------------------------------------")
+
+      // let : 변수가 선언된 블록에서만 사용 가능
+      if(true){
+        let gender = "M";
+        const hobby = "운동";
+        console.log(gender);
+        console.log(hobby + " | " + iter);
+      }
+
+      scopeTest();
+    }
+
+    function scopeTest(){
+      console.log(name);
+    }
+  </script>
+
+  <h3>* 변수 선언 위치에 따른 전역변수/지역변수</h3>
+
+  <script>
+    // 페이지 로딩이 끝난 직후 바로 실행할 코드
+    
+    var declareVar = "var 전역변수";
+    let declareLet = "let 전역변수";
+    const declareConst = "const 전역변수";
+    
+    declareNone = "그냥 변수"; // 키워드가 없는 변수 => 전역변수
+    
+    window.onload = function() {
+    //   console.log(declareVar);
+    //   console.log(declareLet);
+    //   console.log(declareConst);
+    //   console.log(declareNone);
+
+      var declareVar = "var 지역변수";                // 전역변수와 지역변수의 이름이 동일하면 지역변수가 우선순위가 더 높다
+      let declareLet = "let 지역변수";             // 위에서 전역변수 사용으로 재선언 불가
+      const declareConst = "const 지역변수";       // 위에서 전역변수 사용으로 재선언 불가
+      
+      console.log(declareVar);
+      console.log(declareLet);
+      console.log(declareConst);
+      console.log(declareNone);
+      
+      console.log("-------------------------------------------------------------------");
+      console.log(window.declareVar);
+      console.log(this.declareVar);                   // var만 가능
+      
+      declareNone = "그냥 지역변수";
+      console.log(declareNone);
+      console.log(this.declareNone);
+
+      test();
+    }
+
+    function test() {
+      console.log("-------------------------------------------------------------------");
+      console.log(declareNone);
+      console.log(declareVar);
+      console.log(declareLet);
+      console.log(declareConst);
+    }
+  </script>
+
+  <h3>* 자료형</h3>
+  <p>
+    dynamic type : 변수 선언 시 자료형을 별도로 지정하지 않음 <br>
+    => 변수별로 타입이 지정되진 않고, 대입되는 값에 의해 타입이 결정됨
+  </p>
+
+  <h4>자바스크립트의 자료형</h4>
+  <ul>
+    <li>String(문자열)</li>
+    <li>number(숫자)</li>
+    <li>boolean(논리값)</li>
+    <li>Object(객체)</li>
+    <li>function(함수)</li>
+    <li>undefined(초기화가 안된 자료형)</li>
+  </ul>
+
+  <button onclick="typeTest();">자료형 테스트</button>
+  <div class="area" id="area1"></div>
+
+  <script>
+    function typeTest() {
+      // 문자열 : '' 홑따옴표 | "" 쌍따옴표 | `` 백틱
+      const name = `홍길동`;
+      const age = 23;
+      const flag = true;
+      const hobby = ['영화', '음악', '낮잠'];              // 배열 객체
+      const divE1 = document.querySelector('#area1');     // div 요소 객체
+      const user = {                                      // java에서 클래스와 같은 것
+        name: '김말똥',
+        age: 25,
+        id: 'user01'
+      };
+
+      let str = `hello, ${name}, Age : ${age}`;
+
+      const testfn = () => {
+        alert('수업');
+      }
+
+      // 상수는 초기화 하지 않으면 오류
+      let noVal;
+
+      console.log(typeof name, name)
+      console.log(typeof age, age)
+      console.log(typeof flag, flag)
+      console.log(typeof hobby, hobby)
+      console.log(typeof divE1, divE1)
+      console.log(typeof user, user)
+
+      // divE1.innerHTML = typeof name + ', ' + name + '<br>';
+      divE1.innerHTML = `${typeof name}, ${name}<br>`;
+      divE1.innerHTML += `${typeof age}, ${age}<br>`;
+      divE1.innerHTML += `${typeof flag}, ${flag}<br>`;
+      divE1.innerHTML += `${typeof hobby}, ${hobby}<br>`;
+      divE1.innerHTML += `${typeof divE1}, ${divE1}<br>`;
+      divE1.innerHTML += `${typeof user}, ${user}<br>`;
+      divE1.innerHTML += `${typeof testfn}, ${testfn}<br>`;
+      divE1.innerHTML += `${typeof noVal}, ${noVal}<br>`;
+    }
+  </script>
+
+</body>
+</html>

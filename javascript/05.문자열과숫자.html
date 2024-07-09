@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>문자열과 숫자</h1>
+
+  <h3>* 문자열 관련 메소드</h3>
+  <button onclick="stringTest();">문자열 처리 메소드</button>
+  <div class="area" id="area1"></div>
+
+  <script>
+    function stringTest() {
+      let i = document.querySelector("#area1");
+
+      const str1 = 'Hello World';
+
+      i.innerHTML = `str1 : ${str1}<br>`;
+      i.innerHTML += `toUpperCase() : ${str1.toUpperCase()}<br>`;
+      i.innerHTML += `toLowerCase() : ${str1.toLowerCase()}<br>`;
+      i.innerHTML += `문자열의 길이 : ${str1.length}<br>`;
+      i.innerHTML += `---------------------------------------<br>`;
+
+      for(let j = 0; j <str1.length; j++){
+        i.innerHTML += `${j}번 인덱스 : ${str1.charAt(j)}<br>`;
+      }
+      i.innerHTML += `---------------------------------------<br>`;
+
+      i.innerHTML += `앞에서부터 첫 'l'의 위치 : ${str1.indexOf('l')}<br>`;
+      i.innerHTML += `뒤에서부터 첫 'l'의 위치 : ${str1.lastIndexOf('l')}<br>`;
+
+      const str2 = '사과, 바나나, 복숭아, 포도';
+      const fruits = str2.split(',');
+
+      i.innerHTML += `fruits : ${fruits}<br>`;
+      i.innerHTML += `fruits의 자료형 : ${typeof fruits}<br>`;
+    }
+  </script>
+
+  <br>
+
+  <h3>* 문자열 관련 html 메소드</h3>
+  <button onclick="stringHtmlTest();">문자열 html 메소드</button>
+  <div class="area" id="area2"></div>
+
+  <script>
+    function stringHtmlTest() {
+      const area2 = document.querySelector("#area2");
+      const str = 'javascript';
+
+      area2.innerHTML = `str : ${str}<br>`;
+      area2.innerHTML += `bold : ${str.bold()}<br>`;
+      area2.innerHTML += `italics : ${str.italics()}<br>`;
+      area2.innerHTML += `both : ${str.bold().italics()}<br>`;
+      area2.innerHTML += `small : ${str.bold().italics().small()}<br>`;
+      area2.innerHTML += `sub : ${str.bold().italics().sub()}<br>`;
+      area2.innerHTML += `sup : ${str.bold().italics().sup()}<br>`;
+      area2.innerHTML += `link : ${str.link("http://google.com")}<br>`;
+    }
+  </script>
+
+  <br>
+
+  <h3>* 숫자 관련 html 메소드</h3>
+  <button onclick="mathTest();">수학관련 메소드</button>
+  <div class="area" id="area3"></div>
+
+  <script>
+    function mathTest(){
+      const area3 = document.querySelector("#area3");
+      area3.innerHTML = `절대값 : ${Math.abs(-123)}<br>`;
+      area3.innerHTML += `랜덤값 : ${Math.random() * 10}<br>`;
+      area3.innerHTML += `반올림 : ${Math.round(14.5897)}<br>`; // 반올림 위치 조정 불가
+    }
+  </script>
+
+  <h3>문자열과 숫자간의 산술연산</h3>
+  <button onclick="arithmetic();">산술연산</button>
+  <div class="area" id="area4"></div>
+
+  <script>
+    function arithmetic() {
+      let test1 = 7+7;
+      let test2 = 7+'7';
+      let test3 = '7'+7;
+      let test4 = '7'+7+7;
+      let test5 = '7'+(7+7);
+
+      let area4 = document.querySelector("#area4");
+      area4.innerHTML = "";
+      area4.innerHTML += `${test1}<br>`;
+      area4.innerHTML += `${test2}<br>`;
+      area4.innerHTML += `${test3}<br>`;
+      area4.innerHTML += `${test4}<br>`;
+      area4.innerHTML += `${test5}<hr>`;
+
+      let test6 = '7'-6;
+      let test7 = '7'*3;
+      let test8 = '7'/7;
+
+      
+      area4.innerHTML += `${test6}<br>`;
+      area4.innerHTML += `${test7}<br>`;
+      area4.innerHTML += `${test8}<hr>`;
+
+      // 형변환
+      /*
+        1) Number(문자열)
+        2) parseInt(문자열)
+        3) parseFloat(문자열)
+      */
+
+      let test9 = 2 + '3';
+      let test10 = 2 + Number('3');
+      let test11 = 2 + parseInt('3');
+      let test12 = 2 + parseFloat('3');
+
+      area4.innerHTML += `${test9}<br>`;
+      area4.innerHTML += `${test10}<br>`;
+      area4.innerHTML += `${test11}<br>`;
+      area4.innerHTML += `${test12}<hr>`;
+
+      let test13 = 2 + '1.234';
+      let test14 = 2 + Number('1.234');
+      let test15 = 2 + parseInt('1.234');
+      let test16 = 2 + parseFloat('1.234');
+
+      area4.innerHTML += `${test13}<br>`;
+      area4.innerHTML += `${test14}<br>`;
+      area4.innerHTML += `${test15}<br>`;
+      area4.innerHTML += `${test16}<hr>`;
+    }
+  </script>
+
+  정수1 : <input type="number" id="num1"><br>
+  정수2 : <input type="number" id="num2"><br>
+  <div id="result"></div>
+  <button onclick="sumNumbers();">덧셈</button>
+
+  <script>
+    function sumNumbers() {
+      const num1 = document.querySelector("#num1").value;
+      const num2 = document.querySelector("#num2").value;
+
+      document.querySelector("#result").innerHTML = Number(num1) + Number(num2);
+    }
+  </script>
+
+  <h3>* 실습문제</h3>
+  <p>
+    사용자로부터 prompt로 입력받은 문자열 중 alphabet의 소문자 개수 세기
+  </p>
+
+  <button onclick="checkLowerCase();">클릭</button>
+  <div id="ex"></div>
+
+  <script>
+    function checkLowerCase() {
+      let str = prompt("문자열을 입력해주세요");
+      let count = 0;
+
+      
+      // for(let i = 0; i < str.length; i++){
+      //   console.log(Number(str.charCodeAt(0)));
+      //   if(Number(str.charCodeAt(i)) >= 97 && Number(str.charCodeAt(i)) <= 122)
+      //     count++;
+      // }
+
+      if(str != null){
+        for(let i = 0; i < str.length; i++){
+          if(str[i] >= 'a' && str[i] <= 'z'){
+            count++;
+          }
+        }
+      }
+
+      document.querySelector("#ex").innerHTML = `입력하신 문자열"${str}" 중 소문자의 개수는 ${count}개 입니다.`
+    }
+  </script>
+
+</body>
+</html>

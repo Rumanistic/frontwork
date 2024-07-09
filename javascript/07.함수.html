@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수</title>
+    <style>
+        .area {
+            border: 1px solid;
+            padding: 5px;
+            width: 600px;
+        }
+    </style>
+</head>
+<body>
+    <h1>함수</h1>
+
+    <h2>함수 선언하는 방법</h2>
+
+    <ol>
+        <li>선언적 함수(Function Declaration) : funcution키워드, 함수명</li>
+        <li>익명 함수(Function Expression) : 변수에 익명함수를 대입하는 방식</li>
+        <li>화살표 함수(Arrow Function) : 익명함수를 간단히 작성하는 방법(ES6(ES2015)에 추가)</li>
+        <li>즉시 실행 함수 iife(Immediately Invoked Function Expression)
+            <ul>
+                <li>선언과 호출</li>
+                <li>변수를 캡슐화처리 유용</li>
+            </ul>
+        </li>
+    </ol>
+
+    <h3>1) 선언적 함수</h3>
+    <pre>
+        function 함수명([매개변수, 매개변수, ...]) {
+            해당 함수 호출시 실행할 코드;
+            [return 결과값;]
+        }
+    </pre>
+
+    <button onclick="test1();">실행확인</button>
+    <div class="area" id="area1"></div>
+
+    <script>
+        function test1() {
+            document.getElementById('area1').innerHTML = 'test1() 함수 실행됨<br>';
+        }
+    </script>
+
+    <h3>2) 익명 함수</h3>
+    <pre>
+        변수|속성 = function([매개변수,매개변수,...]) {
+            해당 함수 호출시 실행할 코드;
+            [return 결과값;]
+        }
+
+        * 주로 이벤트 핸들러 작성시 사용
+    </pre>
+
+    <button id="btn">실행확인</button>
+    <div class="area" id="area2"></div>
+
+    <script>
+        let btn = document.getElementById('btn');
+        // 이벤트 속성에 대입되는 function => 이벤트 핸들러
+        btn.onclick = function() {
+            document.getElementById('area2').innerHTML = '이벤트 핸들러를 통해 실행됨';
+        }
+    </script>
+
+    <h3>3) 화살표 함수</h3>
+    <pre>
+        - 본문에 리턴만 있을 때
+           변수 = ([매개변수, 매개변수, ...]) => 리턴값
+
+        - 본문이 여러줄 일 때
+            변수 = ([매개변수, 매개변수, ...]) => {
+                해당 함수 호출시 실행할 코드;
+                [return 결과값;]
+            }
+    </pre>
+
+    <button id="btn3">실행확인</button>
+    <div class="area" id="area3"></div>
+
+    <script>
+        const area3 = document.getElementById('area3');
+        const btn3 = document.getElementById('btn3');
+
+        // btn3.onclick = function() {
+        //     return area3.innerHTML = '매개변수가 없는 화살표 함수 실행';
+        // }
+
+        // 위의 익명함수를 화살표 함수로 변환
+        btn3.onclick = () => area3.innerHTML = '매개변수가 없는 화살표 함수 실행';
+    </script>
+
+    <h3>4) 즉시실행 함수</h3>
+    <pre>
+        - 정의하면서 즉시 실행되는 함수
+        - 단 한번만 호출됨
+          ([변수] = function([매개변수, 매개변수, ...]) {
+            해당 함수 호출시 실행할 코드;
+          })(인자,인자,...);
+    </pre>
+
+    <script>
+        // 문서가 로딩된 직후 마지막 1개만 실행
+        // window.onload = function() {
+        //     console.log('onload');
+        // }
+
+        // window.onload = function() {
+        //     console.log('onload2');
+        // }
+
+        // 즉시실행 함수는 함수의 갯수만큼 실행
+        (function(){
+            console.log('iife');
+        })();
+
+        (function(name) {
+            console.log(`Hi, ${name}`);
+            const k = 999;
+            console.log(k);
+        })('철수');
+
+        (() => console.log('iife - arrow'))();
+        (name => console.log(`Hi, ${name}`))('영희');
+    </script>
+
+    <h2>함수의 매개변수</h2>
+
+    <!-- 함수에서의 매개변수는 모든 자료형 가능 -->
+    <button onclick="test2('안녕하세요');">문자매개변수</button>
+    <button onclick="test2(2);">숫자매개변수</button>
+    <button onclick="test2([1,2,3]);">배열매개변수</button>
+    <button onclick="test2(true);">논리매개변수</button>
+
+    <br>
+
+    <!-- 매개변수의 갯수가 맞지않아도 오류나지 않음 (많으면 뒤에것 무시, 적으면 undefined) -->
+    <button onclick="test2(prompt('이름 입력'));">prompt매개변수</button>
+    <button onclick="test2('안녕하세요', '반갑습니다');">문자2개매개변수</button>
+    <button onclick="test2();">매개변수없음</button>
+
+    <div class="area" id="area4"></div>
+
+    <script>
+        function test2(value) { // 매개변수는 자료형 지정 x, 선언구문 x => 변수명만
+            document.getElementById('area4').innerHTML = value;
+        }
+    </script>
+
+    <h3>* 매개변수 관련 arguments배열</h3>
+    <p>
+        함수 호출시 전달되는 값은 내부적으로 arguments 배열형식의에 담김<br>
+        * arguments : 모든 함수마다 내부적으로 하나씩 존재하는 배열형식의 객체
+    </p>
+
+    <button onclick="test3(11,12,1,5,7);">실행확인</button>
+    <div class="area" id="area5"></div>
+
+    <script>
+        function test3() {
+            console.log(arguments);
+            console.log(arguments[1]);
+
+            let area5 = document.getElementById('area5'); 
+
+            let sum = 0;
+            for(let ele of arguments) {
+                sum += ele;
+            }
+            area5.innerHTML = `합계 : ${sum}<br>`;
+            area5.innerHTML += `평균 : ${sum/arguments.length}<br>`;
+
+            // for in으로 arguments에 값들을 하나씩 출력
+        }
+    </script>
+
+    <h3>* 매개변수에 this관련 전달하기</h3>
+    <p>this : 현재 이벤트가 발생한 요소 객체</p>
+
+    <button onclick="test4(this);">this버튼</button>
+    <input type="button" value="input버튼" onclick="test4(this.value);">
+    <button onclick="test4(this.id);" id="btn4">id버튼</button>
+    <button onclick="test4(this.innerHTML);"><b>this버튼</b></button>
+
+    <script>
+        function test4(ele) {
+            console.log(ele);
+        }
+    </script>
+
+    <br><br><br>
+
+    <button onclick="test5(this)">동적효과 버튼</button>
+
+    <script>
+      function test5(element) {
+        element.style.backgroundColor = "red";
+        element.innerHTML = "빨간색으로 변경";
+      };
+    </script>
+
+    <h2>함수의 리턴</h2>
+
+    <h3>* 일반적인 값</h3>
+
+    <button onclick="test6();">랜덤 값</button>
+    <div class="area" id="area6"></div>
+
+    <script>
+      function ran() {
+        let random = parseInt(Math.random() * 100) + 1;
+        return random;
+      }
+
+      function test6() {
+        // document.querySelector("#area6").innerHTML = ran();
+        document.querySelector("#area6").innerHTML = `랜덤값 : ${ran()}`;
+      }
+    </script>
+
+    <button onclick="console.log(ran());">랜덤값 콘솔 출력</button>
+
+    <h3>* 익명함수를 리턴</h3>
+    이름 : <input type="text" id="userName">
+    <button onclick="test7()();">익명함수 리턴</button>
+
+    <script>
+      function test7() {
+        let inputE1 = document.getElementById('userName');
+        return function() {
+          alert(inputE1.value);
+        }
+      }
+    </script>
+
+    <hr>
+    <h2>화살표 함수의 매개변수와 리턴</h2>
+
+    <h3>* 매개변수 지정 방법</h3>
+    <pre>
+      - 매개변수가 없을 경우
+        반드시 괄호가 들어가야함; () => return값
+
+      - 매개변수가 한개인 경우
+        해당 변수명을 적어줘야 함; value1 => return값 [괄호 생략 가능]
+
+      - 매개변수가 두개 이상인 경우
+        반드시 괄호를 해줘야 함; (value1, value2) => return값
+    </pre>
+
+    <h4>* 함수 body 지정 방법</h4>
+    <pre>
+      * single line block
+        x => {return value;};
+        x => value;
+
+      * multi line block
+        x => {
+          ...;
+          ...;
+          return value;
+        };
+    </pre>
+
+    <button onclick="test8();">실행</button>
+    <div class="area" id="area8"></div>
+
+    <script>
+      test8 = () => {
+        let area = document.getElementById('area8');
+        area.innerHTML = `일반함수(매개변수 0개) 실행 : ${fun1}<br>`;
+        area.innerHTML += `화살표 함수로(매개변수 0개) 실행 : ${afun1}<br>`;
+
+        area.innerHTML += `일반함수(매개변수 1개) 실행 : ${fun2(3)}<br>`;
+        area.innerHTML += `화살표 함수로(매개변수 1개) 실행 : ${afun2(3)}<br>`;
+        
+        area.innerHTML += `일반함수(매개변수 2개+) 실행 : ${fun3(2, 3)}<br>`;
+        area.innerHTML += `화살표 함수로(매개변수 2개+) 실행 : ${afun3(2, 3)}<br>`;
+        
+        area.innerHTML += `일반함수 실행(두 줄 이상) : ${fun4(2)}<br>`;
+        area.innerHTML += `화살표 함수로 실행(두 줄 이상) : ${afun4(2)}<br>`;
+      }
+      
+      // 매개변수가 없을 때
+      let fun1 = function() {
+        return '매개변수가 없는 일반함수';
+      }
+      let afun1 = () => '매개변수가 없는 일반함수';
+
+      // 매개변수가 1개 일 때
+      let fun2 = function(num1) {
+        return num1 * 2;
+      }
+      let afun2 = num1 => num1*2;
+
+      // 매개변수가 2개+ 일 때
+      let fun3 = function(num1, num2) {
+        return num1 + num2;
+      }
+      let afun3 = (num1, num2) => num1+num2;
+
+      // 실행 본문이 여러줄 일 때
+      let fun4 = function(num1) {
+        let result = num1 * 5;
+        return result;
+      }
+      let afun4 = num1 => {
+        let result = num1 * 5;
+        return result;
+      }
+    </script>
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    
+</body>
+</html>

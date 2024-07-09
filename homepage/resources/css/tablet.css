@@ -7,3 +7,106 @@ tablet
   소개
   이미지
 */
+
+header {
+  height: 60px;
+}
+
+#logo {
+  float: left;
+  height: 40px;
+  margin: 5px 0;
+}
+
+#login {
+  float: right;
+  margin-top: 11px;
+}
+
+#titleImg {
+  clear: both;
+  height: 300px;
+  width: 100%;
+}
+
+.navi {
+  margin-top: 290px;
+  width: 100%;
+  height: 60px;
+  display: inline-flex;
+  background-color: black;
+  line-height: 60px;
+}
+
+.navi a {
+  display: inline-block;
+  height: 60px;
+  width: 245px;
+  color: white;
+  text-align: center;
+}
+
+.navi a:link, .navi a:visited {
+  color: yellow;
+}
+
+.navi a:hover {
+  color: blue;
+  text-shadow: 2px 2px 5px red;
+}
+
+section {
+  width: 100%;
+  
+}
+
+section > h3 {
+  font-size: 2em;
+  margin-left: 30px;
+  line-height: 40px;
+}
+
+section > article > h4 {
+  font-size: 1.2em;
+  margin-left: 50px;
+}
+
+section > article > p {
+  margin-left: 80px;
+}
+
+aside {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: 100%;
+}
+
+aside img {
+  width: 98%;
+  margin-left: 0.125%;
+  margin-right: 0.125%;
+  height: 200px;
+}
+
+footer {
+  clear: both;
+  height: 180px;
+  padding-top: 30px;
+  padding-left: 20px;
+  background-color: black;
+}
+
+footer span {
+  color: white;
+  font-size: 0.8em;
+  line-height: 20px;
+  text-align: left;
+}
+
+footer > p {
+  color: white;
+  font-size: 0.8em;
+  line-height: 20px;
+  text-align: left;
+}

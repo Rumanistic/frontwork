@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .area {
+      width: 300;
+      height: 100;
+      border: 1px solid;
+      background-color: lightgray;
+      color: red;
+      font-size: 48px;
+    }
+  </style>
+</head>
+<body>
+  <h1>window 객체</h1>
+  <p>
+    window 객체는 자바스크립트의 최상위 객체이며<br>
+    크게 BOM과 DOM으로 나뉨<br>
+    - BOM: Browser Object Model; location, screen, navigator, history<br>
+    - DOM: Document Object Model; document
+  </p>
+
+  <h3>* [window.]open('url', '창이름', '창의특성')</h3>
+  <button onclick="test01();">네이버</button>
+
+  <hr>
+  <h3>* timer관련 메소드</h3>
+  <h4>  - setTimeout(함수, 일정시간(ms))</h4>
+  <p>
+    내가 제시한 일정시간 후에 딱 한번만 실행
+  </p>
+  <h4>  - setInterval(함수, 일정시간(ms))</h4>
+  <p>
+    내가 제시한 시간 간격마다 '매번' 함수 실행
+  </p>
+
+  <button onclick="test02();">실행</button>
+  <button onclick="test03();">실행</button>
+  <div class="area" id="area1"></div>
+
+  <hr>
+
+  <h2>* BOM</h2>
+
+  <h3>location 객체</h3>
+  <p>
+    브라우저 주소창과 관련된 객체
+  </p>
+
+  <button onclick="console.log(location);">실행</button>
+  <br><br>
+
+   <!-- a태그는 애초에 클릭 시 요청할 url을 작성할 수 있는 href 속성을 제공 -->
+  <a href="https://naver.com">네이버로 이동</a>
+  <br><br>
+  
+  <!-- href 속성과 assing() 함수는 history 정보를 보유함 -->
+  <button onclick="location.href='https://naver.com';">네이버로 이동</button>
+
+  <button onclick="location.assign('https://google.com');">구글로 이동</button>
+
+  <button onclick="location.replace('https://daum.net');">다음으로 이동</button>
+
+  <!-- 새 탭에서 열라면 -->
+  <button onclick="window.open('https://google.com')">새탭으로 구글 실행</button>
+  <br><br><br>
+  
+  <button onclick="location.href=location.href;">맨 위로 새로고침</button>
+
+  <button onclick="location.reload();">현 위치에서 새로고침</button>
+  <br><br><br>
+
+  <b>screen 객체</b><br>
+  <button onclick="console.log(screen)">스크린객체 확인</button>
+  <br><br><br>
+
+  <b>navigator 객체</b><br>
+  <button onclick="console.log(navigator)">스크린객체 확인</button>
+  <br><br><br>
+
+  <b>history 객체</b><br>
+  <button onclick="console.log(history)">스크린객체 확인</button>
+
+
+  <h1>* DOM</h1>
+
+  <p>
+    HTML에 있는 각각의 요소들을 노드(NODE)라고 함<br>
+      > 요소노드(Element Node) : 태그 자체들을 의미<br>
+      > 텍스트 노드(Text Node) : 태그 내에 기록되는 내용
+    <br><br>
+    텍스트 노드가 존재하는 요소(시작태그와 종료태그가 한 쌍으로 이뤄져있음) : div, h*, p, pre 등 
+    텍스트 노드가 존재하지 않는 요소(시작태그로만 되어있음) : input, img, hr, br 등
+  </p>
+
+  <h3>* 노드(요소) 생성과 관련된 메소드</h3>
+  <h4>- 텍스트노드가 존재하는 노드 생성(시작태그 + 종료태그)</h4>
+
+  <button onclick="test04();">요소 생성</button>
+  <div id="area2"></div>
+
+  <h4>- 텍스트노드가 존재하지 않는 노드 생성(시작태그)</h4>
+
+  <button onclick="test05();">요소 생성</button>
+  <div id="area3"></div>
+
+  <h3>* 노드(요소) 삭제</h3>
+  <p>위 요소 생성 버튼 클릭 후 요소 삭제 진행</p>
+  <button onclick="test06();">요소 삭제</button>
+
+
+
+  <script>
+    test01 = () => {
+      // window.open();
+      /*
+        window.open('url' 혹은 '창 이름', '창의 특성')
+          - url : 새 창에서 열고자 하는 url 주소
+          - 창 이름 : target(창이름), 같은 이름의 창이 열려 있다면 새로운 창이 열리지 않고 기존 창 새로고침됨
+          - 창의 특성 : 새창의 너비, 높이, 주소창부분 여부, 툴바 여부, 스크로바 여부 등등
+                        새 창의 특성을 넣어줌
+            > width: 창의 너비
+            > height: 창의 높이
+            > resizeable: 창의 크기 조절 여부
+            > location: 주소창 여부
+            > menubar: 메뉴바
+            > scrollbar: 스크롤바 표시 유무
+            > status: 상태 표시줄
+
+            ex) open('url', testwindow, width=500, height=700, resizeable=no, location)
+      */
+      open('http://www.naver.com', 'testwindow', 'width=500, height=700, resizeable=no, location=no')
+    };
+
+    test02 = () => {
+      const myWindow = open();
+      let timer = 3;
+      console.log("3초 후 페이지 종료");
+      setTimeout(() => {
+        setInterval(() => {
+          console.log(`${timer}초 후 종료`);
+          timer -= 1;
+        }, 1000)
+        myWindow.close();
+      }, 3000);
+    };
+
+    test03 = () => {
+      const area1 = document.getElementById('area1');
+
+      setInterval(() => {
+        const now = new Date();
+        let hour = now.getHours();
+        let min = now.getMinutes();
+        let sec = now.getSeconds();
+
+        // if(hour < 10)
+        //   hour = '0' + hour
+        // if(min < 10)
+        //   min = '0' + min
+        // if(sec < 10)
+        //   sec = '0' + sec
+        hour = hour < 10 ? '0'+hour : hour
+        min = min < 10 ? '0'+min : min
+        sec = sec < 10 ? '0'+sec : sec
+        area1.innerHTML = `${hour}:${min}:${sec}`;
+      }, 1000)
+    }
+
+    test04 = () => {
+      // 동적으로 요소를 만드는 방법
+      // 1. '문자열'로 만드는 방법
+      document.getElementById('area2').innerHTML = '<h3>안녕하세요</>'
+
+      // 2. document에서 제공하는 메서드를 통해 '요소객체'로 만드는 방법
+      //    ElementNode 객체 생성 : document.createElement('tagName');
+      let eleNode = document.createElement('h3');
+
+      //    TextNode 객체 생성 : document.createTextNode('texts');
+      let textNode = document.createTextNode('안녕하세요');
+      
+      //    두 노드를 결합
+      eleNode.appendChild(textNode);
+
+      //    node를 DOM에 추가
+      document.getElementById('area2').appendChild(eleNode);
+    }
+
+    test05 = () => {
+      let img = document.createElement('img');
+      console.log(img);
+
+      // 속성 추가
+      img.src = 'https://www.tjoeun.co.kr/upload/smartediter/2024/4/2024040317100625458232218.jpg';
+      img.width = 800;
+      img.height = 400;
+      console.log(img);
+
+      document.getElementById('area3').appendChild(img);
+    }
+
+    test06 = () => {
+      document.getElementById('area3').firstChild.remove();
+      alert("요소 삭제됨");
+    }
+  </script>
+</body>
+</html>
