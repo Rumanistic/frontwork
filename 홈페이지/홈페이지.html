@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.14.0-beta.2/jquery-ui.min.js"></script>
+  <link rel="stylesheet" href="./resources/css/style.css">
+  <script src="./resources/js/script.js" rul="javascript"></script>
+</head>
+<body>
+  <header>
+    <!-- [logo]     [navi1|navi2|navi3] -->
+    <div class="div-header">
+      <span class="logo">
+        <a href="https://www.tjoeun.co.kr/" target="_blank">
+          <img src="https://www.tjoeun.co.kr/images/logo.gif?v=20190918" alt="Logo"/>
+        </a>
+      </span>
+      <span class="navi">
+        <ul>
+          <li class="navi" id="navi1">계절 사진
+            <ul class="dropdown">
+              <li><a href="#">봄</a></li>
+              <li><a href="#">여름</a></li>
+              <li><a href="#">가을</a></li>
+              <li><a href="#">겨울</a></li>
+            </ul>
+          </li>
+          <li class="navi" id="navi2">풍경 사진
+            <ul class="dropdown">
+              <li><a href="#">호수</a></li>
+              <li><a href="#">강</a></li>
+              <li><a href="#">풍경</a></li>
+            </ul>
+          </li>
+          <li class="navi" id="randImg">랜덤 사진</li>
+        </ul>
+      </span>
+    </div>
+
+    </span>
+  </header>
+
+  <section>
+    <!-- [image with buttons] -->
+    <div class="image-container">
+      <span class="button-container">
+        <button id="left"></button>
+        <button id="right"></button>
+      </span>
+      <img class="l content" id="imgL" src="./resources/img/nature-3125912_640.jpg" alt="">
+      <img class="l content" id="imgR" src="" alt="" style="display: none;">
+    </div>
+    
+    <!-- [information]        [image] -->  
+    <div class="div-section m-image">
+      <div class="information">
+        <h2 style="line-height: 1em; text-align: center; font-size: 2em;">공지사항</h2>
+        <table class="table">
+          <tr>
+              <th>제목</th>
+              <th>날짜</th>
+          </tr>
+          <tr>
+              <td><a href="#">여행가이드가 추천하는 국내 겨울여행지 & 관광열차</a></td>
+              <td>2023-12-01</td>
+          </tr>
+          <tr>
+              <td><a href="#">신나는 겨울여행 대관령 눈꽃축제, 고니골 빛축제로..</a></td>
+              <td>2023-12-30</td>
+          </tr>
+          <tr>
+              <td><a href="#">설악산 1월초 설경 절정, 기차 여행 상품이 출시되었..</a></td>
+              <td>2024-01-02</td>
+          </tr>
+          <tr>
+              <td><a href="#">다도해 풍광을 한눈에...해남 땅끝 해안누리길 여행하기</a></td>
+              <td>2024-03-01</td>
+          </tr>
+          <tr>
+              <td><a href="#">국토순례 기차여행에 참가하는 학교, 청소년단체 등...</a></td>
+              <td>2024-07-10</td>
+          </tr>
+      </table>
+      </div>
+      <div class="image-container m content">
+        <img src="./resources/img/nature-3125912_640.jpg" alt="">
+      </div>
+    </div>
+    
+    <!-- [image]    [image]   [image] -->
+    <div class="div-section s-image">
+      <div class="image-container s">
+        <img id="rndImg0" src="" alt="">
+      </div>
+      <div class="image-container s">
+        <img id="rndImg1" src="" alt="">
+      </div>
+      <div class="image-container s">
+        <img id="rndImg2" src="" alt="">
+      </div>
+    </div>
+  </section>
+  
+  <footer>
+    <!-- etc -->
+    <span class="info-footer">
+      <p id="info">
+        의료영상 AI API연동 프로젝트 기반 자바(java)풀스택 개발자 과정<br><br>
+        수강생: 김현수 | 수강위치: 더조은컴퓨터아카데미 강남<br><br>
+
+        ⓒ THEJOEUN ACADEMY Corp.
+      </p>
+    </span>
+    <span class="logo-footer">
+      <img src="https://m.tjoeunit.co.kr/images/logo2_1440.gif?v=20190918" alt="">
+      <br>
+      <h3 id="text">대표번호 &emsp; 1588.8748 &emsp;| &emsp; 전화번호 &emsp; 02-556-5611</h3>
+    </span>
+  </footer>
+</body>
+</html>

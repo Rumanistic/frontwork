@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.14.0-beta.2/jquery-ui.min.js"></script>
+</head>
+<body>
+  <h1>fadeIn(), fadeOut(), fadeToggle()</h1>
+  <p>
+    선택된 요소가 점점 투명해지면서 사라지고,<br>
+    점점 선명해지면서 나타나는 애니메이션 메서드<br>
+  </p>
+  <button id="fadein">fade-in</button>
+  <button id="fadeout">fade-out</button>
+  <button id="fadetoggle">fade-toggle</button>
+  
+  <br><br>
+
+  <img src="./resources/img/free-icon-cursor-4690239.png" id="img1">
+
+  <script>
+    $(() => {
+      $('#fadein').on('click', () => {
+        $('#img1').fadeIn(2000);
+      })
+
+      $('#fadeout').on('click', () => {
+        $('#img1').fadeOut(1000);
+      })
+
+      $('#fadetoggle').on('click', () => {
+        $('#img1').fadeToggle(2000);
+      })
+    })
+  </script>
+</body>
+</html>

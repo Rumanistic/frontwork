@@ -1,0 +1,32 @@
+*{
+  box-sizing: border-box;
+  cursor : url('../img/free-icon-cursor-4690239.png');
+}
+
+.wrap, .wrap * {
+  border: 1px, solid lightgray;
+  color: gray;
+  display: block;
+  padding: 15px;
+  margin: 15px;
+}
+
+.container {
+  background-color: #fff;
+  text-align: center;
+}
+
+header, footer {
+  /* background-color: cyan; */
+  /* border: 1px solid; */
+  /* height: 80px; */
+  /* line-height: calc(100% / 2); */
+}
+
+section {
+  /* background-color: gold; */
+  /* border: 1px solid; */
+  height: calc(100vh - 250px);
+  line-height: calc(100vh - px);
+  /* font-size: 1.5em; */
+}

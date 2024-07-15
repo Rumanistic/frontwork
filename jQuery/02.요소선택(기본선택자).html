@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <style>
+    .table-list {
+      border: 3px double;
+      width: 80%;
+      margin: auto;
+    }
+    th {
+      background-color: rgb(0,255,255,0.4);
+    }
+    .list-item {
+      border: 1px palegreen solid;
+      margin: auto;
+      text-align: center;
+      height: 2em;
+    }
+  </style>
+</head>
+<body>
+  <h1 id="title">기본선택자를 이용한 요소 선택</h1>
+  <h3>* 아이디 선택</h3>
+  <p>
+    고유한 아이디값을 가진 요소 '하나만' 선택할 때 사용
+  </p>
+
+  <h2 id="id1" class=".id">아이디 테스트</h2>
+  <script>
+    $('#title').css('backgroundColor', 'cyan');
+    $(() => {
+      // javascript
+      // document.getElementById('id1').style.color = 'greenyellow';
+      // document.getElementById('id1').innerHTML = '글자변경~';
+
+      // jQuery
+      // .html() : 선택된 요소의 innerHTML과 관련된 기능을 수행하는 메서드
+      $('#id1').css('color', 'green');
+      $('#id2').html('* 클래스 선택자');   // 태그도 적용되는것을 확인 가능
+    });
+
+    $(() => {
+      $('.item').css('backgroundColor', 'orange');
+      $('.select').css({
+        'backgroundColor': 'black', 
+        'color' : 'orange'
+      });
+      $('.select').click(() => alert('clicked!!'));
+    });
+  </script>
+
+  <h3 id="id2" class=".id">아니 이거보면 적용 안되는게 맞잖아</h3>
+
+  <p>특정 클래스 속성을 가진 요소들을 선택하고자 할 때</p>
+
+  <h1 class="item">Class1</h1>
+  <h1 class="item select">Class2</h1>
+  <h1 class="item select">Class3</h1>
+
+  <table class="table-list">
+    <caption>요소 선택하는 방법</caption>
+    <th>순수 자바스크립트 방식</th>
+    <th>jQuery 방식</th>
+    <tr>
+      <td class="list-item">document.getElementById('ID')</td>
+      <td class="list-item">$('#ID')</td>
+    </tr>
+    <tr>
+      <td class="list-item">document.getElementsByClassName('className')</td>
+      <td class="list-item">$('.className')</td>
+    </tr>
+    <tr>
+      <td class="list-item">document.getElementsByTagName('tagName')</td>
+      <td class="list-item">$('tagName')</td>
+    </tr>
+  </table>
+<br><br>
+  <table class="table-list">
+    <caption>선택된 요소에 속성값을 변경하고자 할 때</caption>
+    <th colspan="2">순수 자바스크립트 방식</th>
+    <th>jQuery 방식</th>
+    <tr>
+      <th>target</th>
+      <th>선택된 요소객체에 직접 속성에 접근해서</th>
+      <th>선택된 요소에 메서드 이용</th>
+    </tr>
+    <tr>
+      <td class="list-item">스타일</td>
+      <td class="list-item">.style.style_property = 'to_changes'</td>
+      <td class="list-item">.css(style_property, 'to_changes')</td>
+    </tr>
+    <tr>
+      <td class="list-item">내용</td>
+      <td class="list-item">.innerHTML = 'to_changes'</td>
+      <td class="list-item">.html('to_changes')</td>
+    </tr>
+    <tr>
+      <td class="list-item">이벤트 </td>
+      <td class="list-item">.on'event_name' = () => {}</td>
+      <td class="list-item">.'event_name'(() => {})</td>
+    </tr>
+  </table>
+  <br><br><br><br><br>
+</body>
+</html>

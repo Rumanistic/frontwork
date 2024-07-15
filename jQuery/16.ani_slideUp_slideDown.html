@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <a href="https://www.flaticon.com/kr/free-icons/" title="큐 아이콘"></a>
+  <a href="https://www.flaticon.com/kr/free-icons/" title="알파벳 아이콘"></a>
+  
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.14.0-beta.2/jquery-ui.min.js"></script>
+</head>
+<body>
+  <button id="slideup">slide-up</button>
+  <button id="slidedown">slide-down</button>
+  <button id="slidetoggle">slide-toggle</button>
+  
+  <br><br>
+
+  <img src="./resources/img/free-icon-cursor-4690239.png" id="img1">
+
+  <br><br>
+
+  <div id="test1">
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis aliquid beatae temporibus eligendi quod illo, eius labore sunt, eos quaerat iste ex commodi maiores iusto ipsum fugiat amet nulla quas?
+  </div>
+
+  <style>
+    .q {
+      background: beige;
+      border: 1px solid yellow;
+      border-radius: 10px;
+      width: 500px;
+      height: 50px;
+      line-height: 50px;
+      font-size: 24px;
+      text-align: center;
+      cursor: "./resources/img/free-icon-cursor-4690239.png" pointer;
+      margin-bottom: 3px;
+    }
+
+    .a {
+      border: 1px solid lightgray;
+      border-radius: 10px;
+      width: 485px;
+      height: 4em;
+      line-height: 100%;
+      text-align: left;
+      padding-left: 15px;
+      margin-top: 3px;
+      display: none;
+    }
+
+    .q::before{
+      content: url('./resources/img/free-icon-q-4019869.png');
+    }
+
+    .a::before{
+      content: url('./resources/img/free-icon-letter-a-4552937.png');
+    }
+
+  </style>
+  <div id="qa">
+    <span>
+      <div class="q">질문입니다.</div>
+      <p class="a">질문에 대한 답입니다.</p>
+    </span>
+    <span>
+      <div class="q">점심에 무엇을 드셨나요?</div>
+      <p class="a">시리얼과 칼로리 바란스요.</p>
+    </span>
+    <span>
+      <div class="q">집은 언제 갈 수 있나요?</div>
+      <p class="a">수업이 끝나는 시간인 18시 30분부터 가능하죠.</p>
+    </span>
+    <span>
+      <div class="q">공부 하시나요?</div>
+      <p class="a">수업때만요?</p>
+    </span>
+    <span>
+      <div class="q">점심시간은 언제입니까?.</div>
+      <p class="a">12시 50분부터 1시 50분까지 입니다.</p>
+    </span>
+  </div>
+
+  <script>
+    $(() => {
+      $('#slideup').on('click', () => {
+        $('#img1').slideUp(2000);
+        $('#test1').slideUp(2000);
+      })
+
+      $('#slidedown').on('click', () => {
+        $('#img1').slideDown(1000);
+        $('#test1').slideDown(1000);
+      })
+
+      $('#qa .q').on('click', (e) => {
+        $(e.target).siblings('.a').slideToggle(500);
+      })
+    })
+  </script>
+</body>
+</html>

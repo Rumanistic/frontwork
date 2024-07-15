@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+  <h1>이벤트 핸들러(이벤트 발생시 실행될 function) 연결 방법</h1>
+
+  <h3>방법1. event 메서드를 이용한 연결</h3>
+  <pre>
+    $('선택자').eventMethod((e) => {
+      doSth;
+    })
+  </pre>
+
+  <h4 id="test1">click me!!</h4>
+
+  <script>
+    $(() => {
+      $('#test1').click((e) => {
+        $(e.target).text('has been clicked!!');
+      });
+
+      $('#test1').dblclick((e) => {
+        $(e.target).css('color', 'blue')
+      })
+    })
+  </script>
+
+  <br>
+
+  <h3>방법2. on 메서드를 이용한 연결</h3>
+  <pre>
+    $('선택자').on('eventMethod', (e) => {
+      doSth;
+    })
+  </pre>
+
+  <h4 id="test2">hover me!!</h4>
+
+
+  <script>
+    $(() => {
+      $('#test2').on('mouseenter', (e) => {
+        $(e.target).text("It's hover me!!");
+        $(e.target).css('color', 'blue');
+      });
+
+      $('#test2').on('mouseout', (e) => {
+        $(e.target).text('hover me!!');
+        $(e.target).css('color', 'black');
+      })
+
+      $('#test2').on(
+        {'mouseenter': (e) => {
+            $(e.target).text("It's hover me!!");
+            $(e.target).css('color', 'blue');
+          }
+        },
+        {'mouseout': (e) => {
+            $(e.target).text('hover me!!');
+            $(e.target).css('color', '');
+          }
+        },
+        {'click': (e) => {
+            $(e.target).text('has been clicked!!');
+          }
+        })
+    })
+  </script>
+
+  <h3>방법2. on 메서드를 이용한 하위요소의 이벤트 걸기</h3>
+  <pre>
+    $('상위요소선택자').on('eventMethod', '하위요소선택자', (e) => {
+      doSth;
+    })
+  </pre>
+
+  <div id="test3">
+    <h4>click h4!!!</h4>
+    <h5>click h5!!!</h5>
+  </div>
+
+  <h5>div 외부 h5</h5>
+
+  <script>
+    $(() => {
+      $('#test3').on('click', 'h4, h5', (e) => {
+        $(e.target).html('hi!');
+      })
+    })
+  </script>
+
+  <h3>** 동적으로 만들어진 요소에도 동일한 이벤트를 적용시키고자 한다면 반드시 방법3으로 적용해야함 </h3>
+
+  <div id="test4" style="border:1px solid red">
+    <h6>기존에 존재하는 h6</h6>
+  </div>
+
+  <script>
+    $(() => {
+      // 방법 1
+      // $('#test4').click((e) => {
+      //   $('#test4').append('<h6>클릭으로 인해 동적으로 만들어진 h6</h6>')
+      // })
+
+      // 방법 2
+      // $('#test4>h6').on('click', (e) => {
+      //   $('#test4').append('<h6>클릭으로 인해 동적으로 만들어진 h6</h6>')
+      // })
+
+      // 방법 3
+      $('#test4').on('click', 'h6', () => {
+        $('#test4').append('<h6>클릭으로 인해 동적으로 만들어진 h6</h6>')
+      })
+    })
+  </script>
+
+  <br>
+  
+  <h3>* 일회성 이벤트(one 메서드)</h3>
+
+  <h6 id="test5">딱 한번만 클릭 시 실행</h6>
+
+  <script>
+    $(() => {
+      $('#test5').one('click', () => {
+        alert('기회 소진, 이벤트 없음');
+      })
+    })
+  </script>
+
+  <hr>
+
+  <h3>* 키보드 관련 이벤트</h3>
+  <p>
+    - keydown| keypress : 키가 눌려질 때 발생하는 이벤트<br>
+    &emsp;&emsp;> keydown: 키보드의 모든 키가 눌려질 때 발생<br>
+    &emsp;&emsp;> keypress: 키보드의 function키, 한영 전환키 이외의 나머지 키들이 눌려질 때 발생<br>
+    - keyup : 키를 눌렀다 뗐을 때 발생되는 이벤트
+  </p>
+
+  <input type="text" id="test6">
+
+  <script>
+    $(() => {
+      $('#test6').keyup((e) => {
+        // console.log('키를 뗐음');
+        console.log($(e.target).val().length);
+      })
+    })
+  </script>
+
+  <h3>* 동적으로 글자수 세기</h3>
+
+  최소 10글자 이상 최대 150자 이내로 작성하시오<br>
+  <textarea cols="30" rows="10" id="content"></textarea><br>
+  <span id="count">0</span> / 150
+
+  <script>
+    $(() => {
+      $('#content').on('keyup', (e) => {
+        $('#count').text($(e.target).val().length);
+      })
+    })
+  </script>
+</body>
+</html>

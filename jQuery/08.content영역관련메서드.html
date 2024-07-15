@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+  <h1>Content (innerHTML, innerText) 관련 메소드</h1>
+  <h3>* html('[문구]') 메서드 : innerHTML 속성과 관련된 메서드</h3>
+
+  <p>
+    선택된 요소의 content영역의 값을 리턴해주거나 또는 변경해주는 메서드<br>
+      &emsp;&emsp;> $('선택자').html() <br>
+      &emsp;&emsp;&emsp;&emsp;html()  : 선택된 요소의 content영역 값을 반환해줌(tag 포함) <br>
+      &emsp;&emsp;&emsp;&emsp;html('문구') : 선택된 요소의 content영역 값을 문구로 대체함 <br>
+  </p>
+
+  <h1 id="test1">
+    <a>네이버로</a>
+  </h1>
+
+  <h1 id="test2">
+
+  </h1>
+
+  <!-- <script>
+    $(() => {
+      const tmp = $('#test1').html();
+      console.log(tmp);
+
+      $('#test2').html(tmp);
+      $('#test2').children().attr('href', 'https://naver.com');
+    })
+  </script> -->
+
+  <h3>* text('[문구]') 메서드 : innerText 속성과 관련된 메서드</h3>
+  <p>
+    선택된 요소의 content 영역의 값을 리턴 또는 변경해주는 메서드<br>
+    &emsp;&emsp;> $('선택자').text() <br>
+    &emsp;&emsp;&emsp;&emsp;text()  : 선택된 요소의 content영역 값을 반환해줌(텍스트만) <br>
+    &emsp;&emsp;&emsp;&emsp;text('문구') : 선택된 요소의 content영역 값을 문구로 대체함 <br>
+</p>
+
+  <h1 id="test3">
+    <a>네이버로</a>
+  </h1>
+
+  <h1 id="test4">
+
+  </h1>
+
+  <!-- <script>
+    $(() => {
+      const tmp = $('#test3').text();
+      console.log(tmp);
+
+      $('#test4').text(tmp);
+      $('#test4').children().attr('href', 'https://naver.com');
+    })
+  </script> -->
+
+  <hr>
+
+  <div class="test">테스트</div>
+  <div class="test">테스트</div>
+  <div class="test">테스트</div>
+
+  <script>
+    $(() => {
+      $('.test').html('<h1>변경됨</h1>')
+
+      // 선택된 요소들을 순차적으로 접근할 때마다 해당 function이 실행됨
+      // 이때 함수 실행 시 리턴된 값으로 문구 변경
+      let count = 0;
+      $('.test').html(function() {
+        return `<h1>다시변경됨${++count}</h1>`
+      })
+
+      $('.test').html(function(index, html) {
+        return `<h1>인덱스 : ${index}, 컨텐츠 내용 : ${html}</h1>`
+      })
+    })
+  </script>
+</body>
+</html>

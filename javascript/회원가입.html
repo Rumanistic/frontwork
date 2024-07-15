@@ -10,94 +10,96 @@
 <body>
   <h1>회원가입</h1>
   <div class="main">
-    <table>
-      <tr>
-        <td class="index">* 아이디:</td>
-        <td class="input" colspan="3"><input type="text" class="userInput" id="userID"></td>
-      </tr>
-
-      <tr>
-        <td class="info" colspan="4">첫글자는 반드시 영문자이며 영문자와 숫자 포함 총 4~12자로 입력하시오.</td>
-      </tr>
-      
-      <tr>
-        <td class="index">* 비밀번호:</td>
-        <td class="input" colspan="3"><input type="password" class="userInput" id="userPW"></td>
-      </tr>
-
-      <tr>
-        <td class="info" colspan="4">영문자, 숫자, 특수문자로 총 8~15자로 입력하시오.</td>
-      </tr>
-
-      <tr>
-        <td class="index">* 비밀번호 확인:</td>
-        <td class="input" colspan="3"><input type="password" class="userInput" id="confPW"></td>
-      </tr>
-
-      <tr>
-        <td class="info" colspan="4">위의 비밀번호와 일치하게 입력하시오.</td>
-      </tr>
-      
-      <tr>
-        <td class="index">* 이름:</td>
-        <td class="input" colspan="3"><input type="text" class="userInput" id="userName"></td>
-      </tr>
-
-      <tr>
-        <td class="info" colspan="4">한글로만 이루어져 있어야 되면 2글자 이상으로 입력하시오.</td>
-      </tr>
-      
-      <tr>
-        <td class="index">* 이메일:</td>
-        <td class="input" colspan="3"><input type="email" class="userInput" id="email"></td>
-      </tr>
-      
-      <tr>
-        <td class="info" colspan="4">첫글자는 반드시 영문자이며 영문자와 숫자 포함 총 4~12자로 입력하시오.</td>
-      </tr>
-
-      <tr>
-        <td class="index">* 취미:</td>
-        <td class="input" colspan="3"><input type="text" class="userInput" id="hobby"></td>
-      </tr>
-
-      <tr>
-        <td class="index">* 거주지:</td>
-        <td class="input" colspan="3">
-          <select id="country">
-            <option value="Gangwon">강원</option>
-            <option value="Gyeonggi">경기</option>
-            <option value="Gwangju">광주</option>
-            <option value="Daegu">대구</option>
-            <option value="Daejeon">대전</option>
-            <option value="Busan">부산</option>
-            <option value="Seoul">서울</option>
-            <option value="Sejong">세종</option>
-            <option value="Ulsan">울산</option>
-            <option value="Incheon">인천</option>
-          </select>
-      
-        </td>
-      </tr>
-      <tr>
-        <td colspan="4">
-          <hr>
-        </td>
-      </tr>
-      <tr>
-        <td colspan="4">
-          <div class="btnDiv">
-            <span class="areaL">
-              <button class="button" onclick="return validate();">회원가입</button>
-              <!-- <button class="button" onclick="validate();">확인</button> -->
-            </span>
-            <span class="areaR">
-              <button class="button" id="cancel">취소</button>
-            </span>
-          </div>
-        </td>
-      </tr>
-    </table>
+    <form action="login.html" method="get" id="frm">
+      <table>
+        <tr>
+          <td class="index">* 아이디:</td>
+          <td class="input" colspan="3"><input type="text" class="userInput" id="userID"></td>
+        </tr>
+  
+        <tr>
+          <td class="info" colspan="4">첫글자는 반드시 영문자이며 영문자와 숫자 포함 총 4~12자로 입력하시오.</td>
+        </tr>
+        
+        <tr>
+          <td class="index">* 비밀번호:</td>
+          <td class="input" colspan="3"><input type="password" class="userInput" id="userPW"></td>
+        </tr>
+  
+        <tr>
+          <td class="info" colspan="4">영문자, 숫자, 특수문자로 총 8~15자로 입력하시오.</td>
+        </tr>
+  
+        <tr>
+          <td class="index">* 비밀번호 확인:</td>
+          <td class="input" colspan="3"><input type="password" class="userInput" id="confPW"></td>
+        </tr>
+  
+        <tr>
+          <td class="info" colspan="4">위의 비밀번호와 일치하게 입력하시오.</td>
+        </tr>
+        
+        <tr>
+          <td class="index">* 이름:</td>
+          <td class="input" colspan="3"><input type="text" class="userInput" id="userName"></td>
+        </tr>
+  
+        <tr>
+          <td class="info" colspan="4">한글로만 이루어져 있어야 되면 2글자 이상으로 입력하시오.</td>
+        </tr>
+        
+        <tr>
+          <td class="index">* 이메일:</td>
+          <td class="input" colspan="3"><input type="email" class="userInput" id="email"></td>
+        </tr>
+        
+        <tr>
+          <td class="info" colspan="4">첫글자는 반드시 영문자이며 영문자와 숫자 포함 총 4~12자로 입력하시오.</td>
+        </tr>
+  
+        <tr>
+          <td class="index">* 취미:</td>
+          <td class="input" colspan="3"><input type="text" class="userInput" id="hobby"></td>
+        </tr>
+  
+        <tr>
+          <td class="index">* 거주지:</td>
+          <td class="input" colspan="3">
+            <select id="country">
+              <option value="Gangwon">강원</option>
+              <option value="Gyeonggi">경기</option>
+              <option value="Gwangju">광주</option>
+              <option value="Daegu">대구</option>
+              <option value="Daejeon">대전</option>
+              <option value="Busan">부산</option>
+              <option value="Seoul">서울</option>
+              <option value="Sejong">세종</option>
+              <option value="Ulsan">울산</option>
+              <option value="Incheon">인천</option>
+            </select>
+        
+          </td>
+        </tr>
+        <tr>
+          <td colspan="4">
+            <hr>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="4">
+            <div class="btnDiv">
+              <span class="areaL">
+                <button type="submit" class="button" onclick="return validate();">회원가입</button>
+                <!-- <button class="button" onclick="validate();">확인</button> -->
+              </span>
+              <span class="areaR">
+                <button class="button" id="cancel">취소</button>
+              </span>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </form>
   </div>
 </body>
 </html>

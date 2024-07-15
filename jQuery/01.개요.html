@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery 개요</title>
+    
+    <!-- 오프라인용: jQuery 다운로드 후 연결 -->
+    <script src="./resources/js/jquery-3.7.1.min.js"></script>
+
+    <!-- 온라인용: CDN 경로로 인터넷이 반드시 연결되어 있어야 함 -->
+    <!-- <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script> -->
+</head>
+<body>
+  <h1>jQuery 개요</h1>
+  <h3>* jQuery란? </h3>
+  <p>
+      기존에 자바스크립트 언어 만으로 구현하기엔 복잡했던 구문 작성들을 <br>
+      간소화 하기 위해 "존 레식"에 의해 만들어짐 <br>
+      JavaScript 기반 라이브러리(유용한 기능들의 모음집) <br>
+      즉, JavaScript언어로 유용한 함수나 내용들이 이미 정의되어있는(기술되어있는) 모음집<br><br>
+
+      복잡한 자바스크립트 구문을 보다 짧고 쉽게 개발 가능 <br>
+      (적은 양의 코드로 빠르고, 풍부한 기능 제공) <br><br>
+
+      > jQuery 장점 <br>
+      1) DOM요소와 관련된 스크립트를 보다 쉽게 구현할 수 있음 <br> 
+      2) AJAX(비동기식 통신), 이벤트 처리 등등 폭넓게 지원함 <br>
+      3) jQuery와 관련된 확장형 플러그인, 오픈 api등을 지원 <br> 
+        (차트, 슬라이드, 등등..)
+  </p>
+
+  <h3>* jQuery 라이브러리 연결 방법</h3>
+
+  <p>
+    head 태그 내에 script 태그로 외부 jQuery 관련 .js 파일 연결<br>
+      오프라인/온라인 지원
+      - jQuery 공식 사이트
+      <a href="https://jquery.com/" target="_blank">jQuery 공식 사이트</a><br><br>
+
+    1. jQuery 라이브러리 직접 다운로드 > 다운로드 받은 경로 지정(오프라인)<br><br>
+    2. CDN(Content Delievery Network)방식(온라인)
+      라이브러리가 있는 사이트의 url을 연결하여 사용
+  </p>
+
+  <hr>
+
+  <h3>* jQuery 구문 작성</h3>
+  <p>
+    jQuery 구문으로 DOM 요소를 다루는 구문을 기본적으로 작성하기 때문에<br>
+    문서상에 요소들이 다 만들어지고 나서 실행되어야 함<br><br>
+
+    <b>- 자바스크립트에서의 사용방법</b>
+    <pre>
+      window.onload = () => {
+        실행 내용
+      }
+
+      window.onload 구문은 해당 문서의 요소들이 로드되고 
+      연동되어있는 외부문서들도 모두 로드되고 나서 실행됨
+
+      "단 한번"만 "맨 마지막 구문"만 실행됨(페이지가 로드될 때만)
+    </pre>
+
+    <b>- jQuery에서 사용 방법</b>
+    <pre>
+      1) jQuery(document).ready(() => {
+        실행내용;
+      });
+
+      2) $(document).ready(() => {실행내용;});
+
+      3) $(() => {실행내용;});       <= 주로 사용됨
+
+      해당 문서의 요소들만 다 로드되면 바로 실행됨
+      여러번 기술가능함(제한없음)
+      순차적으로 실행
+    </pre>
+  </p>
+
+  
+
+  <script>
+    $(() => {alert("Window is ready");});
+    $(() => {alert("Are you ready to in?");});
+
+    // h3요소들을 선택해서 배경색 변경
+    // javascript:
+    // const h3 = document.getElementsByTagName('h3');
+    // for(let i in h3){
+    //   h3[i].style.backgroundColor = 'cyan';
+    // };
+
+    // jQuery:
+    // $('type').css("CSS_OPTION_AS_KEY", "CSS_OPTION_AS_VALUE");
+    // $('tag') tag 검색
+    // $('#id') id 검색
+    // $('.id') class 검색
+    $(() => {
+      $('h3').css("backgroundColor", "cyan");
+      $('#test').css("color", "pink");
+    })
+  </script>
+
+  <div id="test">안녕하세요</div>
+</body>
+</html>

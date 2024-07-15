@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <style>
+    .added{
+      color: orange;
+    }
+
+    .item{
+      background-color: deepskyblue;
+      width: 100px;
+      height: 100px;
+      text-align: center;
+      line-height: 100px;
+      margin: 5px;
+    }
+
+    .item span{
+      font-size: 2em;
+      color: whitesmoke;
+      font-weight: bold;
+    }
+
+    .purple{
+      background-color: purple;
+    }
+  </style>
+</head>
+<body>
+  <h1>요소 생성 및 제거</h1>
+  <h3>* 동적으로 요소 생성</h3>
+  <button id="btn">요소 생성</button>
+  <div id="area1"></div>
+
+  <script>
+    $(() => {
+      $('#btn').click(() => {
+        let el1 = '<p>pPpPpPp</p>';
+
+        // let el2 = document.createElement('p');
+        // let test = document.createTextNode('pPpPpPp')
+
+        // el2.appendChild(text);
+        
+        // jQuery 방식
+        let el3 = $('<p></p>');
+        el3.text('pPpPpPp');
+
+        $('#area1').append(el3);
+      })
+    })
+  </script>
+
+  <hr>
+  <h3>* 삽입 관련 메서드 part1</h3>
+  <p>
+    선택된 요소를 기준으로 새로운 요소를 추가시켜주는 메서드 <br>
+    
+    $(A).append(B);   A요소 맨 뒷부분에 B를 추가(자손/하위) <br>
+    $(A).prepend(B);   A요소 내에 앞부분에 B를 추가(자손/하위) <br><br>
+
+    $(A).after(B);   A요소 뒷부분에 B를 추가(동위) <br>
+    $(A).before(B);   A요소 앞부분에 B를 추가(동위) <br><br>
+  </p>
+
+  <h3>* 삽입 관련 메서드 part2</h3>
+  <p>
+    선택된 요소를 기준으로 새로운 요소를 추가시켜주는 메서드 <br>
+    
+    $(B).appendTo(A);   A요소 내에 맨 뒷부분에 B를 추가(자손/하위) <br>
+    $(B).prependTo(A);   A요소 내에 맨 앞부분에 B를 추가(자손/하위) <br><br>
+
+    $(B).insertAfter(A);   A요소 뒷부분에 B를 추가(동위) <br>
+    $(B).insertBefore(A);   A요소 앞부분에 B를 추가(동위) <br><br>
+  </p>
+
+  <h1 id="test1"><span>A</span></h1>
+  <h1 id="test2"><span>A</span></h1>
+  <h1 id="test3"><span>A</span></h1>
+  <h1 id="test4"><span>A</span></h1>
+
+  <script>
+    $(() => {
+      $('#test1').append('<span class="added">B</>');
+      $('#test2').prepend('<span class="added">B</>');
+
+      $('#test3').after('<span class="added">B</>');
+      $('#test4').before('<span class="added">B</>');
+
+
+
+      // $('<span class="added">B</>').appendTo('#test1');
+      // $('<span class="added">B</>').prependTo('#test2');
+
+      // $('<span class="added">B</>').insertAfter('#test3');
+      // $('<span class="added">B</>').insertBefore('#test4');
+    })
+  </script>
+
+  <hr>
+
+  <h3>* 요소 객체 복제 메서드</h3>
+  <p>
+    $('선택자').clone([true|false]) : 선택된 요소를 복제하여 반환해주는 메서드 <br>
+    - true | false : 복제할 요소에 걸려있는 이벤트까지도 복제할 것인지를 지정(기본값 false)
+  </p>
+
+  <div id="clone-test">
+    <div id="item1" class="item">
+      <span>안녕</span>
+    </div>
+  </div>
+
+  <button id="clone">복제</button>
+  <div id="clone-result"></div>
+
+  <script>
+    $(() => {
+      $('.item').hover((e) => {
+        $(e.target).addClass('purple');
+      }, (e) => {
+        $(e.target).removeClass('purple')
+      })
+
+      $('#clone').click((e) => {
+        const copy = $('#item1').clone(true);
+        // $(e.target).siblings('#clone-result').append(copy);
+        $(e.target).siblings('#clone-result').append($('#item1').clone(true));
+      })
+    })
+  </script>
+
+  <h3>* 요소를 제거 및 잘라내기 메서드</h3>
+  <p>
+    $('선택자').empty() : 선택된 요소의 하위 요소들을 제거해주는 메서드 <br>
+    var = $('선택자').remove|detach : 선택된 요소를 제거한 후 해당 요소를 반환해주는 메서드 <br>
+    &emsp;&emsp;> remove() : 잘라내기할 때 잘라낸 요소의 이벤트를 가져오지 않음 <br>
+    &emsp;&emsp;> detach() : 잘라내기할 때 잘라낸 요소의 이벤트를 가져옴 <br>
+
+  </p>
+
+  <div id="remove-test">
+    <div id="item2" class="item">
+      <span>안녕</span>
+    </div>
+  </div>
+  <button type="button" id="empty">제거</button>
+  <button type="button" id="remove">잘라내기(remove)</button>
+  <button type="button" id="detach">잘라내기(detach)</button>
+  <div id="remove-result"></div>
+
+  <script>
+    $(() => {
+
+      $('#empty').click((e) => {
+        $('#item2').empty();       // item2 하위의 모든 태그 삭제
+        $('#remove-result').empty();
+      });
+
+      $('#remove').click((e) => {
+        const e1 = $('#clone-result').children('#item1').remove();       // item2 하위의 모든 태그 삭제
+        $('#remove-result').append(e1);
+      });
+
+      $('#remove').click((e) => {
+        const e1 = $('#clone-result').children('#item1').detach();       // item2 하위의 모든 태그 삭제
+        $('#remove-result').append(e1);
+      });
+
+    });
+    /*
+      요소.css('style', 'val')      : 변경
+      요소.css('style')             : 반환
+
+      요소.val('text')              : 속성 value 변경
+      요소.val()                    : 속성 value 값 반환
+
+      요소.html|text('text')        : 변경
+      요소.html|text()              : 반환
+
+      요소.attr('속성', 'val')      : 변경
+      요소.attr('속성')             : 반환
+
+      요소.event((e) => {})
+
+      요소.addClass('클래스명')     : 클래스 삽입
+      요소.removeClass('클래스명')  : 클래스 제거
+    */
+  </script>
+
+</body>
+</html>
